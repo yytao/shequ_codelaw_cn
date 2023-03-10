@@ -8,6 +8,7 @@
 
         @section('style')
             <link rel="stylesheet" href="{{ asset('common/bootstrap-4.6.2/css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('common/css/style.css') }}">
             @show
 
         @section('script')
