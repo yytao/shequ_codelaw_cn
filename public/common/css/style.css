@@ -222,6 +222,12 @@ html {
     color: rgb(128, 128, 128);
     margin-top: -4px;
 }
+.mobile-info .info-title span {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
 
 .mobile-info .info-author {
     position: relative;
@@ -244,3 +250,38 @@ html {
     -webkit-box-align: center;
     align-items: center;
 }
+
+.mobile-right {
+    position: relative;
+    width: 9rem;
+    height: 6rem;
+    overflow: hidden;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: block;
+}
+
+.jjAsJJ {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.jjAsJJ img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out 0s;
+}
+
+.dJIGNF {
+    position: absolute;
+    z-index: 1000;
+    inset: -4px;
+    background: rgb(249, 251, 255);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out 0.8s;
+}
+
