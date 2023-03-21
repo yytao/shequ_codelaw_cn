@@ -13,4 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\IndexController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryRoot');
+Route::get('/share', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryShare');
+Route::get('/unused', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryUnused');
+Route::get('/renting', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryRenting');
+Route::get('/social', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategorySocial');
