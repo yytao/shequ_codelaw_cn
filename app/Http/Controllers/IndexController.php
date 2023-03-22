@@ -34,11 +34,14 @@ class IndexController extends Controller{
         }
 
         $articleList = $query->orderBy('created_at', 'DESC')->take(10)->get();
-        
+
         return view('index', compact(
             'articleList',
         ));
     }
+
+
+
 
 
     public function layoutData(View $view)

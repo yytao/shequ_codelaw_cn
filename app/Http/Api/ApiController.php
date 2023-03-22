@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
-class SynchronizeController extends Controller
+class ApiController extends Controller
 {
 
     public function article(Request $request)

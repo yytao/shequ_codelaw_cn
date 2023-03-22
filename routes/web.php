@@ -18,3 +18,7 @@ Route::get('/share', [\App\Http\Controllers\IndexController::class, 'index'])->n
 Route::get('/unused', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryUnused');
 Route::get('/renting', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryRenting');
 Route::get('/social', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategorySocial');
+
+
+Route::get('/a/{article_id}', [\App\Http\Controllers\ArticleController::class, 'index']);
+
