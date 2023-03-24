@@ -29,7 +29,7 @@
     -ms-flex-pack: center;
     justify-content: center;
     position: fixed;
-    bottom: .4rem;
+    bottom: .6rem;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);

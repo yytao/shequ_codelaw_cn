@@ -133,9 +133,11 @@
 
     <div data-v-23e4f95a="" data-v-cfb99e7e="" class="nav-bar-v2-fixed" open-app-top-wx-param="[object Object]">
         <div data-v-23e4f95a="" class="nav-bar-v2 nav-bar-v2-bg-image" style="background-color: rgb(255, 255, 255);">
-            <div data-v-23e4f95a="" class="nav-bar-bottom" data-track="{&quot;key&quot;:&quot;f_w_bottomGuide&quot;}">
-                发布帖子
-            </div>
+            <a href="/post">
+                <div data-v-23e4f95a="" class="nav-bar-bottom" data-track="{&quot;key&quot;:&quot;f_w_bottomGuide&quot;}">
+                    发布帖子
+                </div>
+            </a>
         </div>
     </div>
 

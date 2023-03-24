@@ -7,6 +7,7 @@
 namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\Category;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\View;
 
@@ -41,8 +42,15 @@ class IndexController extends Controller{
     }
 
 
+    public function user(Request $request)
+    {
+        return view('user');
+    }
 
-
+    public function post(Request $request)
+    {
+        return view('post');
+    }
 
     public function layoutData(View $view)
     {

@@ -22,3 +22,6 @@ Route::get('/social', [\App\Http\Controllers\IndexController::class, 'index'])->
 
 Route::get('/a/{article_id}', [\App\Http\Controllers\ArticleController::class, 'index']);
 
+Route::get('/user', [\App\Http\Controllers\IndexController::class, 'user']);
+
+Route::get('/post', [\App\Http\Controllers\IndexController::class, 'post']);
