@@ -17,7 +17,7 @@ class IndexController extends Controller{
 
         $route = Route::currentRouteName();
         $query = Article::query();
-        $query->where('status', 1);
+        $query->where('status', '1');
 
         switch ($route){
             case 'CategoryShare':
