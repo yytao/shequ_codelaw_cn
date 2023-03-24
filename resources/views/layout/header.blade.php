@@ -30,8 +30,8 @@
                     </div>
                 </div>
 
-                <div class="tb-page__header">
-                    
+                <div class="tb-page__header" style="background: #f7f7fa;">
+
                 </div>
 
                 @section('body')
