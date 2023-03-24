@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="tb-page__header">
-                    <h1 class="tb-page__title">留学生社区</h1>
+                    
                 </div>
 
                 @section('body')
