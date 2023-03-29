@@ -87,7 +87,7 @@ class IndexController extends Controller{
      */
     public function changeLocale($locale)
     {
-        if (in_array($locale, ['en', 'zh_CN']))
+        if (in_array($locale, ['en', 'zh_CN', 'ko']))
         {
             session()->put('locale', $locale);
         }
