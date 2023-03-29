@@ -13,15 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryRoot');
-Route::get('/share', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryShare');
-Route::get('/unused', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryUnused');
-Route::get('/renting', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryRenting');
-Route::get('/social', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategorySocial');
+Route::group(['middleware'=>['setLocale']], function(){
+
+    Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryRoot');
+    Route::get('/share', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryShare');
+    Route::get('/unused', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryUnused');
+    Route::get('/renting', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryRenting');
+    Route::get('/social', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategorySocial');
+
+    Route::get('/a/{article_id}', [\App\Http\Controllers\ArticleController::class, 'index']);
+
+    Route::get('/user', [\App\Http\Controllers\IndexController::class, 'user']);
+
+    Route::get('/post', [\App\Http\Controllers\IndexController::class, 'post']);
+
+});
 
 
-Route::get('/a/{article_id}', [\App\Http\Controllers\ArticleController::class, 'index']);
 
-Route::get('/user', [\App\Http\Controllers\IndexController::class, 'user']);
-
-Route::get('/post', [\App\Http\Controllers\IndexController::class, 'post']);
+//修改语言
+Route::get('/changeLocale/{locale}', [\App\Http\Controllers\IndexController::class, 'changeLocale']);

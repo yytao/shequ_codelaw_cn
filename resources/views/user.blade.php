@@ -23,7 +23,7 @@
                                 <path fill-rule="evenodd" d="M9.5 2a.5.5 0 0 1 0-1h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.707L9.871 6.836a5 5 0 1 1-.707-.707L13.293 2H9.5zM6 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
                             </svg>
                         </div>
-                        <div data-v-178e9d9c="" class="user-sign">暂无简介</div>
+                        <div data-v-178e9d9c="" class="user-sign">{{ trans('user.empty_intro') }}</div>
                     </div><!---->
                 </div>
                 <ul data-v-cf2da122="" class="user-center-ul">
@@ -32,7 +32,7 @@
                             <svg data-v-5b06c658="" class="nav-title-type-icon">
                                 <use xlink:href="#wo_list_ post_outlined_24"></use>
                             </svg>
-                            <span data-v-5b06c658="">我的贴子</span>
+                            <span data-v-5b06c658="">{{ trans('user.my_post') }}</span>
                             <svg data-v-5b06c658="" class="nav-title-more-icon">
                                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                             </svg>
@@ -44,7 +44,7 @@
                             <svg data-v-5b06c658="" class="nav-title-type-icon">
                                 <use xlink:href="#wo_list_collect_outlined_24"></use>
                             </svg>
-                            <span data-v-5b06c658="">我的收藏</span>
+                            <span data-v-5b06c658="">{{ trans('user.my_collect') }}</span>
                             <svg data-v-5b06c658="" class="nav-title-more-icon">
                                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                             </svg>
@@ -55,7 +55,7 @@
                             <svg data-v-5b06c658="" class="nav-title-type-icon">
                                 <use xlink:href="#wo_list_complaint_outlined_24"></use>
                             </svg>
-                            <span data-v-5b06c658="">投诉反馈</span>
+                            <span data-v-5b06c658="">{{ trans('user.report') }}</span>
                             <svg data-v-5b06c658="" class="nav-title-more-icon">
                                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                             </svg>
@@ -63,7 +63,7 @@
                     </li>
                 </ul>
             </div>
-            <div data-v-502af113="" class="log-out-wrap"> 退出登录 </div>
+            <div data-v-502af113="" class="log-out-wrap"> {{ trans('user.logout') }} </div>
         </div>
     </div>
 

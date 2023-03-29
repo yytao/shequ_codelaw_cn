@@ -20,7 +20,6 @@
 
             <div data-v-0af163f2="" class="pull-con" style="transform: translateY(0px); transition: all 0.2s ease 0s;">
 
-
                 <div data-v-5b680340="" data-v-cfb99e7e="" class="tb-forum" data-v-0af163f2="">
 
                 </div>
@@ -30,27 +29,27 @@
                             <ul class="tb-tag-group__ul" style="width: 340px;">
                                 <a href="/">
                                     <li class="tb-tag-group__li @if($route=='CategoryRoot') tb-tag-group__li--active @endif">
-                                        <span class="tb-tag-group__item">最新</span>
+                                        <span class="tb-tag-group__item">{{ trans('lan.newest') }}</span>
                                     </li>
                                 </a>
                                 <a href="/share">
                                     <li class="tb-tag-group__li @if($route=='CategoryShare') tb-tag-group__li--active @endif">
-                                        <span class="tb-tag-group__item">分享</span>
+                                        <span class="tb-tag-group__item">{{ trans('lan.share') }}</span>
                                     </li>
                                 </a>
                                 <a href="/unused">
                                     <li class="tb-tag-group__li @if($route=='CategoryUnused') tb-tag-group__li--active @endif">
-                                        <span class="tb-tag-group__item">闲置</span>
+                                        <span class="tb-tag-group__item">{{ trans('lan.unused') }}</span>
                                     </li>
                                 </a>
                                 <a href="/renting">
                                     <li class="tb-tag-group__li @if($route=='CategoryRenting') tb-tag-group__li--active @endif">
-                                        <span class="tb-tag-group__item">租房</span>
+                                        <span class="tb-tag-group__item">{{ trans('lan.renting') }}</span>
                                     </li>
                                 </a>
                                 <a href="/social">
                                     <li class="tb-tag-group__li @if($route=='CategorySocial') tb-tag-group__li--active @endif">
-                                        <span class="tb-tag-group__item">交友</span>
+                                        <span class="tb-tag-group__item">{{ trans('lan.social') }}</span>
                                     </li>
                                 </a>
                             </ul>
@@ -96,7 +95,7 @@
                                                                 <path d="M7.84 4.1a.178.178 0 0 1 .32 0l.634 1.285a.178.178 0 0 0 .134.098l1.42.206c.145.021.204.2.098.303L9.42 6.993a.178.178 0 0 0-.051.158l.242 1.414a.178.178 0 0 1-.258.187l-1.27-.668a.178.178 0 0 0-.165 0l-1.27.668a.178.178 0 0 1-.257-.187l.242-1.414a.178.178 0 0 0-.05-.158l-1.03-1.001a.178.178 0 0 1 .098-.303l1.42-.206a.178.178 0 0 0 .134-.098L7.84 4.1z"/>
                                                                 <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
                                                             </svg>
-                                                            <span data-v-e96e0c68="" class="text">收藏</span>
+                                                            <span data-v-e96e0c68="" class="text">{{ trans('lan.collect') }}</span>
                                                         </div>
                                                     </div>
                                                     <div data-v-e96e0c68="" class="tb-col-4">
@@ -135,7 +134,7 @@
         <div data-v-23e4f95a="" class="nav-bar-v2 nav-bar-v2-bg-image" style="background-color: rgb(255, 255, 255);">
             <a href="/post">
                 <div data-v-23e4f95a="" class="nav-bar-bottom" data-track="{&quot;key&quot;:&quot;f_w_bottomGuide&quot;}">
-                    发布帖子
+                    {{ trans('lan.publish') }}
                 </div>
             </a>
         </div>

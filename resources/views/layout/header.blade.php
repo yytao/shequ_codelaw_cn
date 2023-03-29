@@ -25,10 +25,20 @@
                 <div data-v-23e4f95a="" data-v-cfb99e7e="" class="nav-bar-v2-fixed">
                     <div data-v-23e4f95a="" class="nav-bar-v2 nav-bar-v2-bg-image" style="background-color: rgb(255, 255, 255);">
                         <div data-v-23e4f95a="" class="nav-bar-top">
-                            <div data-v-23e4f95a="" class="text"> 留学生社区 </div>
+                            <div data-v-23e4f95a="" class="text"> {{ trans('lan.appname') }} </div>
                         </div>
+
+                        <div>
+                            <select onchange="changeLocale(this.value)">
+                                <option @if($locale == 'zh_CN') selected @endif value="zh_CN" >中文</option>
+                                <option @if($locale == 'en') selected @endif value="en" >英文</option>
+                            </select>
+                        </div>
+
                     </div>
                 </div>
+
+
 
                 <div class="tb-page__header" style="background: #f7f7fa;">
 
@@ -37,19 +47,20 @@
                 @section('body')
                 @show
 
+
                 <div data-v-23e4f95a="" data-v-cfb99e7e="" class="nav-bar-v2-fixed" style="bottom: 0px;">
                     <div data-v-23e4f95a="" class="nav-bar-v2 nav-bar-v2-bg-image" style="background-color: rgb(255, 255, 255);">
                         <div data-v-23e4f95a="" class="nav-bar-top">
 
                             <a href="/" style="width: 50%; text-align: center;font-size: 1.3em;color: black;">
                                 <div data-v-23e4f95a="" class="" style="text-align: center;font-size: 1em;">
-                                    首页
+                                    {{ trans('lan.home') }}
                                 </div>
                             </a>
 
                             <a href="/user" style="width: 50%; text-align: center;font-size: 1.3em;color: black;">
                                 <div data-v-23e4f95a="" class="" style="text-align: center;font-size: 1em;">
-                                    我的
+                                    {{ trans('lan.my') }}
                                 </div>
                             </a>
 
@@ -60,3 +71,10 @@
         </div>
     </body>
 </html>
+
+<script>
+    function changeLocale(val)
+    {
+        window.location = '/changeLocale/'+val
+    }
+</script>
