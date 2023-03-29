@@ -31,7 +31,8 @@
                         <div>
                             <select onchange="changeLocale(this.value)">
                                 <option @if($locale == 'zh_CN') selected @endif value="zh_CN" >中文</option>
-                                <option @if($locale == 'en') selected @endif value="en" >英文</option>
+                                <option @if($locale == 'en') selected @endif value="en">English</option>
+                                <option @if($locale == 'ko') selected @endif value="en">한국어</option>
                             </select>
                         </div>
 
