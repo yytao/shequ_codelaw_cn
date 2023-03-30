@@ -27,9 +27,13 @@ Route::group(['middleware'=>['setLocale']], function(){
 
     Route::get('/post', [\App\Http\Controllers\IndexController::class, 'post']);
 
+    Route::get('/verify', [App\Http\Controllers\Auth\RegisterController::class, 'verifyUser'])->name('verify.user');
+
+    Auth::routes();
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 });
-
-
 
 //修改语言
 Route::get('/changeLocale/{locale}', [\App\Http\Controllers\IndexController::class, 'changeLocale']);
+

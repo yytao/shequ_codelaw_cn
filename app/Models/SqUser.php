@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-    protected $table = "users";
+    protected $table = "sq_user";
     protected $guarded = [];
 
     protected function serializeDate(\DateTimeInterface $date){
