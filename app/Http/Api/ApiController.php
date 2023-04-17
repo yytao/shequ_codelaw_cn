@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 class ApiController extends Controller
 {
 
-    public function article(Request $request)
-    {
-        return response([
-            'msg' => 'success',
-            'info' => "",
-        ], 200);
-
-    }
+//    public function article(Request $request)
+//    {
+//        return response([
+//            'msg' => 'success',
+//            'info' => "",
+//        ], 200);
+//
+//    }
 
 
 

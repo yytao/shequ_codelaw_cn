@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>@yield('title')留学生社区</title>
+        <title>@yield('title'){{ trans('views.appName') }}</title>
 
         @section('style')
             <link rel="stylesheet" href="{{ asset('common/bootstrap-4.6.2/css/bootstrap.min.css') }}">
@@ -25,7 +25,7 @@
                 <div data-v-23e4f95a="" data-v-cfb99e7e="" class="nav-bar-v2-fixed">
                     <div data-v-23e4f95a="" class="nav-bar-v2 nav-bar-v2-bg-image" style="background-color: rgb(255, 255, 255);">
                         <div data-v-23e4f95a="" class="nav-bar-top">
-                            <div data-v-23e4f95a="" class="text"> {{ trans('lan.appname') }} </div>
+                            <div data-v-23e4f95a="" class="text"> {{ trans('views.appName') }} </div>
                         </div>
 
                         <div>
@@ -55,13 +55,13 @@
 
                             <a href="/" style="width: 50%; text-align: center;font-size: 1.3em;color: black;">
                                 <div data-v-23e4f95a="" class="" style="text-align: center;font-size: 1em;">
-                                    {{ trans('lan.home') }}
+                                    {{ trans('views.home') }}
                                 </div>
                             </a>
 
                             <a href="/user" style="width: 50%; text-align: center;font-size: 1.3em;color: black;">
                                 <div data-v-23e4f95a="" class="" style="text-align: center;font-size: 1em;">
-                                    {{ trans('lan.my') }}
+                                    {{ trans('views.my') }}
                                 </div>
                             </a>
 

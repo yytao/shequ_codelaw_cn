@@ -53,9 +53,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'captcha.required' => trans('auth.captcha_required'),
+            'captcha.captcha' => '验证码不正确',
         ]);
     }
 
@@ -78,6 +77,11 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
+        //进行验证
+        $this->validator($request->all())->validate();
+
+        //return redirect('register//')->withErrors(['name'=>'账号']);
+
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
