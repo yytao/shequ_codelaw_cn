@@ -29,7 +29,7 @@ class SignupMail extends Mailable
     public function build()
     {
         return $this
-            -> subject('Test Email Verification')
+            -> subject(trans('views.email_subject'))
             -> view('emails.send-email', ['email_data'=>$this->email_data]);
     }
 }

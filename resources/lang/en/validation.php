@@ -189,10 +189,14 @@ return [
         'updated_at'               => 'Updated At',
         'username'                 => 'Username',
         'year'                     => 'Year',
+
+        //custom
+        'schoolCard' => 'school card',
+        'captcha' => 'Captcha',
     ],
     'custom'               => [
         'attribute-name' => [
-            'rule-name' => 'custom-message',
+
         ],
     ],
 ];

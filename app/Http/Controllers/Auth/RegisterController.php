@@ -11,6 +11,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use Intervention\Image\Facades\Image;
+use think\Exception;
 
 class RegisterController extends Controller
 {
@@ -53,8 +55,14 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'captcha.required' => trans('auth.captcha_required'),
-            'captcha.captcha' => '验证码不正确',
+            'name' => ['required', 'string', 'max:255'],
+            'schoolCard' => ['required', 'mimes:jpeg,png,jpg,gif,svg', 'max:5000'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'captcha' => ['required', 'captcha'],
+        ],[
+
+            'captcha.captcha' => trans('auth.captcha_captcha'),
         ]);
     }
 
@@ -80,13 +88,30 @@ class RegisterController extends Controller
         //进行验证
         $this->validator($request->all())->validate();
 
-        //return redirect('register//')->withErrors(['name'=>'账号']);
+        // 声明路径名
+        $destinationPath = 'uploads/user_sc/';
+        try {
+            // 取到图片
+            $file = $request->file('schoolCard');
+            // 获得图片的名称 为了保证不重复 我们加上userid和time
+            $file_name = 'user_sc_' . sha1(time()) .'.'. $file->getClientOriginalExtension();
+            // 执行move方法
+            $file->move($destinationPath, $file_name);
+
+            // 裁剪图片 生成200x200的缩略图
+            Image::make($destinationPath . $file_name)->fit(200)->save();
+
+        } catch (Exception $exception){
+
+            return redirect('register//')->withErrors(['schoolCard'=>'发生错误，请联系网站管理员']);
+        }
 
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->verification_code = sha1(time());
+        $user->school_card = '/' . $destinationPath . $file_name;
         $user->save();
         if ($user != null)
         {
@@ -95,11 +120,11 @@ class RegisterController extends Controller
                 'verification_code' => $user->verification_code
             ];
             Mail::to($user->email)->send(new SignupMail($data));
-            return redirect()->back();
+            return redirect('login//')->withErrors(['suc'=>'注册成功，请登录邮箱验证']);
         }
 
         // show error message
-        return redirect()->back();
+        return redirect()->back()->withErrors(['name'=>'发生错误，请联系网站管理员']);
     }
 
 

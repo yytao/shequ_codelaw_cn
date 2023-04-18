@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row mb-3">
@@ -18,12 +18,27 @@
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
-                                    <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="row mb-3">
+                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('schoolCard') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="schoolCard" type="file" class="form-control @error('schoolCard') is-invalid @enderror" name="schoolCard" required accept="image/gif,image/png,image/jpg,image/jpeg">
+
+                                @error('schoolCard')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
 
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
@@ -65,7 +80,7 @@
                             <label for="captcha" class="col-md-4 col-form-label text-md-end">{{ __('Captcha') }}</label>
 
                             <div class="col-md-3">
-                                <input id="captcha"  class="form-control" type="captcha" name="captcha" value="{{ old('captcha')  }}" required>
+                                <input id="captcha"  class="form-control" type="captcha" name="captcha" value="" required>
                                 @if($errors->has('captcha'))
                                     <div class="col-md-12">
                                         <p class="text-danger text-left"><strong>{{$errors->first('captcha')}}</strong></p>

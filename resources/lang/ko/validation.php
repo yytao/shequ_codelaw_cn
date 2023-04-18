@@ -189,10 +189,14 @@ return [
         'updated_at'               => 'Updated At',
         'username'                 => '유저네임',
         'year'                     => '년',
+
+        //custom
+        'schoolCard' => 'school card',
+
     ],
     'custom'               => [
         'attribute-name' => [
-            'rule-name' => 'custom-message',
+
         ],
     ],
 ];

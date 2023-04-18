@@ -189,10 +189,14 @@ return [
         'updated_at'               => 'Updated At',
         'username'                 => '用户名',
         'year'                     => '年',
+
+        //custom
+        'schoolCard' => '学生证明',
+        'captcha' => '验证码',
     ],
     'custom'               => [
         'attribute-name' => [
-            'rule-name' => 'custom-message',
+
         ],
     ],
 ];

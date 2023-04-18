@@ -1,10 +1,10 @@
-Hello {{$email_data['name']}}}
+{{ __('views.email_hello') }} {{$email_data['name']}}
 <br><br><br>
 
-Please click the below link to verify your email and activate your account!
+{{ __('views.email_tip') }}
 <br><br>
-<a href="http://lc.shequ/verify?code={{$email_data['verification_code']}}">Click Here!</a>
+<a href="{{ config('app.url') }}/verify?code={{$email_data['verification_code']}}">{{ __('views.email_click') }}</a>
 
 <br><br>
-Thank you!
+{{ __('views.email_thank') }}
 <br>
