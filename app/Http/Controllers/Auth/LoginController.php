@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Request;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -41,8 +42,5 @@ class LoginController extends Controller
 
 
 
-    public function credentials(Request $request)
-    {
-        return array_merge($request->only($this->username(), 'password'),['is_verified' => 1]);
-    }
+
 }
