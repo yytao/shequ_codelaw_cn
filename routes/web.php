@@ -15,22 +15,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware'=>['setLocale']], function(){
 
+    Auth::routes();
+
     Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryRoot');
     Route::get('/share', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryShare');
     Route::get('/unused', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryUnused');
     Route::get('/renting', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryRenting');
     Route::get('/social', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategorySocial');
-
     Route::get('/a/{article_id}', [\App\Http\Controllers\ArticleController::class, 'index']);
-
-    Route::get('/user', [\App\Http\Controllers\IndexController::class, 'user']);
-
-    Route::get('/post', [\App\Http\Controllers\IndexController::class, 'post']);
-
     Route::get('/verify', [App\Http\Controllers\Auth\RegisterController::class, 'verifyUser'])->name('verify.user');
-
-    Auth::routes();
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    Route::group(['middleware'=>['setLocale']], function(){
+        Route::get('/user', [\App\Http\Controllers\IndexController::class, 'user']);
+        Route::get('/post', [\App\Http\Controllers\IndexController::class, 'post']);
+
+    });
 
 });
 

@@ -18,7 +18,7 @@
                 <div data-v-178e9d9c="" data-v-cf2da122="" class="user-card-nav-wrap">
                     <div data-v-178e9d9c="" class="avatar" style="background-image: url(&quot;/common/image/people_default.jpg&quot;);"></div>
 
-                    <div data-v-178e9d9c="" class="user-info"><div data-v-178e9d9c="" class="user-name"> 墙外楼_BI1FPF
+                    <div data-v-178e9d9c="" class="user-info"><div data-v-178e9d9c="" class="user-name"> {{ $user->name }}
                             <svg data-v-178e9d9c class="bi bi-gender-male user-sex-icon">
                                 <path fill-rule="evenodd" d="M9.5 2a.5.5 0 0 1 0-1h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.707L9.871 6.836a5 5 0 1 1-.707-.707L13.293 2H9.5zM6 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
                             </svg>

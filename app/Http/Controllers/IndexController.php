@@ -8,6 +8,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;
@@ -51,7 +52,8 @@ class IndexController extends Controller{
      */
     public function user(Request $request)
     {
-        return view('user');
+        $user = Auth::user();
+        return view('user', compact('user'));
     }
 
 
