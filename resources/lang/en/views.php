@@ -6,6 +6,7 @@ return [
     'publish'               => 'Publish',
     'my'                    => 'My',
     'home'                  => 'Home',
+    'all'                   => 'All',
     'newest'                => 'Newest',
     'share'                 => 'Share',
     'unused'                => 'Unused',

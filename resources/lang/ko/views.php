@@ -6,6 +6,7 @@ return [
     'publish'               => '풀어 주다',
     'my'                    => '나의',
     'home'                  => '지수',
+    'all'                   => '최신',
     'newest'                => '최신',
     'share'                 => '지분',
     'unused'                => '쉬고 있는',

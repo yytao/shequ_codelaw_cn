@@ -1,0 +1,33 @@
+.post-content {
+  font-size: 3.8vw;
+  position: relative;
+  left: 7vw;
+  width: 80vw;
+}
+.content-in {
+  text-decoration: none;
+  color: black;
+}
+.post-picture {
+  width: 30vw;
+  display: block;
+  position: relative;
+  left: -1vw;
+}
+.post-num {
+  font-size: 3vw;
+  color: #7f7f7f;
+  position: relative;
+  left: 70vw;
+  top: -2vh;
+}
+#divider {
+  position: relative;
+  top: -3vh;
+}
+.post-date {
+  height: 20px;
+}
+.post-bottom {
+  height: 20px;
+}

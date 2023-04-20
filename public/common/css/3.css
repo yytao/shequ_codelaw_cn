@@ -1,0 +1,31 @@
+#top-two{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    height: 13vh;
+}
+#search-result-num{
+    position: relative;
+    top: 11vh;
+}
+#result-num{
+    position: relative;
+    left: 1.5vw;
+    top:1.5vh;
+    font-size: 3.5vw;
+}
+.results{
+    font-size: 3.5vw;
+    text-decoration: none;
+    color: black;
+}
+.result-time{
+    float: right;
+}
+.result-other{
+    color: #A6A6A6;
+}
+.geduan{
+    border:0.1vw solid #D9D9D9;
+}
+#chongdang{
+    height: 11vh;
+}

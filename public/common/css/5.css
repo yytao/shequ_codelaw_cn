@@ -1,0 +1,58 @@
+#my-posts {
+  padding-bottom: 10px;
+}
+#fix {
+  position: fixed;
+  z-index: 2;
+}
+#information {
+  position: fixed;
+  top: 0vh;
+  left: 0vw;
+  width: 100vw;
+  height: 19vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+  z-index: 999;
+}
+#photo {
+  width: 25vw;
+  position: relative;
+  left: 4vw;
+  top: 3vh;
+}
+#name {
+  position: relative;
+  left: 34vw;
+  top: -10vh;
+  font-size: 1.5em;
+}
+#IDnum {
+  position: relative;
+  left: 34vw;
+  top: -8vh;
+  font-size: 0.6em;
+}
+#IPaddress {
+  position: relative;
+  left: 34vw;
+  top: -7.8vh;
+  font-size: 0.6em;
+}
+#out {
+  position: relative;
+  right: -75vw;
+  top: -17vh;
+  width: 13vw;
+}
+
+.my-post {
+  position: relative;
+  top: 35vh;
+  background-color: white;
+  display: block;
+}
+
+#navi {
+  position: fixed;
+}

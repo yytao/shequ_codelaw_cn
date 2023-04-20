@@ -1,11 +1,12 @@
 <?php
 
 return [
-    'appName'               => '熊猫生活',
+    'appName'               => '异国',
 
     'publish'               => '发布',
     'my'                    => '我的',
     'home'                  => '首页',
+    'all'                   => '全部',
     'newest'                => '最新',
     'share'                 => '分享',
     'unused'                => '闲置',

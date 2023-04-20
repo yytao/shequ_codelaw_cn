@@ -1,0 +1,29 @@
+#navi {
+    position: relative;
+    top: 30vw;
+    background-color: white;
+}
+
+#fenge {
+    border: 0.4vw solid #d9d9d9;
+}
+
+.navi-tubiao {
+    width: 11vw;
+    top: 2vw;
+}
+
+#message {
+    position: relative;
+    left: 5vw;
+}
+
+#community {
+    position: relative;
+    left: 30vw;
+}
+
+#myself {
+    position: relative;
+    left: 55vw;
+}

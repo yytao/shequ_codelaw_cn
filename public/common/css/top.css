@@ -1,0 +1,37 @@
+#top-two{
+    position: fixed;
+    background-color:white;
+    top:0;
+    width: 100%;
+    z-index: 999;
+}
+#top-bar{
+    background-color: white;
+    width: 100%;
+}
+
+#logo{
+    width: 17vw;
+    margin: 5px;
+    width: 17vw;
+}
+#search-bar{
+    display: inline-block;
+    margin-left: 20px;
+}
+#welcom{
+    font-size: 1vw;
+}
+#search-input{
+    width: 57vw;
+    line-height: 10vw;
+    background-color: rgb(242,242,242);
+    border-radius: 2vw;
+    border: none;
+    font-size: 5vw;
+}
+#search-img{
+    width: 7vw;
+    position: relative;
+    top: 1.5vw;
+}

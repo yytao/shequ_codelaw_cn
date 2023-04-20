@@ -1,0 +1,63 @@
+.dingbu{
+    position: relative;
+    top:1vh;
+}
+#details{
+    position: fixed;
+    width: 100vw;
+    height: 7vh;
+    z-index: 999;
+    background-color:white;
+    line-height:0vw;   
+    font-size: 4vw; 
+    /* 顶格 */
+    top: -0.01vh;
+    left: -0.01vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+#detail-text{
+    text-align: center;
+}
+#detail-button{
+    font-weight: bold;
+    font-size: 4vw;
+    color: white;
+    float: right;
+    position: relative;
+    right: 3vw;
+    border: none;
+    border-radius: 1.5vw;
+    background: rgb(169,207,249);
+}
+
+#content-bar{
+    position: relative;
+    top: 5vh;
+}
+
+.message-left{
+    width: 11vw;
+}
+
+.message-right{
+    width: 2.5vw;
+}
+.message-text{
+    width: 80vw;
+    font-weight: 100;
+    font-size: 3vw; 
+    text-align: left;
+    cursor: pointer;
+}
+.message-text2{
+    width: 80vw;
+    font-weight: 100;
+    font-size: 3vw; 
+    text-align: left;
+    color: rgb(177, 176, 176);
+    cursor: pointer;
+}
+.message-underline{
+    text-decoration: underline;
+    text-underline-offset:1vw;
+}

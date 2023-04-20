@@ -1,0 +1,42 @@
+.dingbu{
+    position: relative;
+    top: 1vh;
+}
+#details{
+    position: fixed;
+    width: 100vw;
+    height: 7vh;
+    z-index: 999;
+    background-color:white;
+    line-height:0.1vw;   
+    font-size: 4vw; 
+    /* 顶格 */
+    top: -0.01vh;
+    left: -0.01vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+#detail-return{
+    font-size: 1vw; 
+    width: 6vw;
+    vertical-align:top;
+}
+#detail-text{
+    text-align: center;
+}
+
+#content-bar{
+    width: 93vw;
+    position: relative;
+    top: 7vh;
+}
+.line{
+    height:1px;
+    border:none;
+    border-top:1px solid #dbe1e5;
+}
+#post-at{
+    font-weight:bold;
+}
+
+
+

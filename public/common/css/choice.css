@@ -1,0 +1,31 @@
+#chongdang{
+  height: 18.5vh;
+}
+#dingbu-choose{
+  background-color: white;
+  height: 16vh;
+  position: relative;
+  top:-1vh
+}
+.ding-choose{
+  width: 30vw;
+  display: inline-block;
+  font-size: 4vw;
+  vertical-align: top;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  position: relative;
+  top:1vh;
+  z-index: 999;
+}
+.ding-tubiao{
+  width: 14vw;
+}
+.ding-fenge{
+  width: 22vw;
+
+}
+.weixuan{
+  display: none;
+}
