@@ -1,7 +1,9 @@
 #navi {
-    position: relative;
-    top: 30vw;
+    position: fixed;
+    bottom: 0;
     background-color: white;
+    z-index: 999;
+    width: 100%;
 }
 
 #fenge {

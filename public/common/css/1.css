@@ -43,9 +43,10 @@
     top:80vh;
 }
 #content-bar{
-    position: relative;
-    top: 35vw;
-    padding: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 40vw;
+    padding-bottom: 15vw;
 }
 
 #chongdang{
