@@ -2,10 +2,10 @@
 <html>
 
 <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>{{ __('views.appName') }}</title>
     <link rel="stylesheet" type="text/css" href="/common/common.css" />
-
     <link rel="stylesheet" type="text/css" href="/common/css/top.css" />
     <link rel="stylesheet" type="text/css" href="/common/css/1.css" />
     <link rel="stylesheet" type="text/css" href="/common/css/post.css" />
