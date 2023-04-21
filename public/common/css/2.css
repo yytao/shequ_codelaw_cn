@@ -1,24 +1,32 @@
-.dingbu{
-    position: relative;
-    top: 1vh;
+
+.detail-return{
+    line-height: 15vw;
+    width: 20vw;
+    float: left;
+    text-align: center;
+    padding-top: 5px;
 }
+
+.detail-title{
+    line-height: 15vw;
+    width: 60vw;
+    text-align: center;
+    float: left;
+}
+
 #details{
     position: fixed;
-    width: 100vw;
-    height: 7vh;
+    width: 100%;
+    height: 15vw;
     z-index: 999;
     background-color:white;
-    line-height:0.1vw;   
-    font-size: 4vw; 
+    font-size: 5vw;
     /* 顶格 */
-    top: -0.01vh;
-    left: -0.01vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 #detail-return{
-    font-size: 1vw; 
+    font-size: 1vw;
     width: 6vw;
-    vertical-align:top;
 }
 #detail-text{
     text-align: center;

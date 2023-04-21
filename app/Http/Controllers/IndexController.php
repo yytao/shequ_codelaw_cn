@@ -7,11 +7,14 @@
 namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\UserCollect;
+use App\Models\UserStar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;
+
 
 class IndexController extends Controller{
 
@@ -23,6 +26,7 @@ class IndexController extends Controller{
         $route = Route::currentRouteName();
         $query = Article::query();
         $query->where('status', '1');
+        $user = Auth::user();
 
         switch ($route){
             case 'CategoryShare':
@@ -38,39 +42,42 @@ class IndexController extends Controller{
                 $query->where('category_id', 4);
                 break;
         }
-
         $articleList = $query->orderBy('created_at', 'DESC')->take(10)->get();
+
+
+
+        $userStar = UserStar::where('status', '1')
+            ->where('user_id', $user->id)
+            ->pluck('article_id')
+            ->toArray();
+
+        $userCollect = UserCollect::where('status', '1')
+            ->where('user_id', $user->id)
+            ->pluck('article_id')
+            ->toArray();
+
 
         return view('index', compact(
             'articleList',
+            'user',
+            'userStar',
+            'userCollect'
         ));
     }
 
 
-    /*
-     *
-     */
-    public function user(Request $request)
-    {
-        $user = Auth::user();
-        return view('user', compact('user'));
-    }
 
 
-    /*
-     *
-     */
-    public function post(Request $request)
-    {
-        return view('post');
-    }
+
+
+
+
 
     /*
      * boot方法调用，共享变量给所有模板
      */
     public function layoutData(View $view)
     {
-
         $nav = Category::select('id', 'category_name')->orderBy('sort', 'asc')->get()->toArray();
         $view->with('nav', $nav);
 

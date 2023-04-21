@@ -6,18 +6,157 @@
  */
 namespace App\Http\Controllers;
 use App\Models\Article;
+use App\Models\Category;
+use App\Models\UserCollect;
+use App\Models\UserStar;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use think\Exception;
 
 class ArticleController extends Controller{
 
-    public function index(Request $request, $article_id){
+    public function __construct()
+    {
+        Auth::check();
+    }
 
-        $article = Article::find($article_id);
-
-        return view('article_detail', compact(
-            'article',
+    /*
+     * 发帖页
+     */
+    public function post(Request $request)
+    {
+        $category = Category::orderBy('sort', 'ASC')->get();
+        return view('post', compact(
+            'category'
         ));
     }
+
+    protected function contentValidator(array $data)
+    {
+        return Validator::make($data, [
+            'articleContent' => ['required', 'string', 'max:1000'],
+            'articleCategory' => ['required'],
+            'captcha' => ['required', 'captcha'],
+        ],[
+
+            'captcha.captcha' => trans('auth.captcha_captcha'),
+        ]);
+    }
+
+    /*
+     * 发帖方法
+     */
+    public function postContent(Request $request)
+    {
+        $this->contentValidator($request->all())->validate();
+
+        try {
+            $article = new Article();
+            $article->user_id = Auth::user()->id;
+            $article->content = $request->articleContent;
+            $article->category_id = $request->articleCategory;
+            $article->created_at = time();
+            $article->save();
+            if ($article != null)
+            {
+                return redirect()->back()->withErrors(['suc'=>'发帖成功，请耐心等待管理员审核']);
+            }
+
+            // show error message
+            return redirect()->back()->withErrors(['name'=>'发生错误，请联系网站管理员']);
+        } catch (Exception $exception){
+
+            return redirect('register//')->withErrors(['schoolCard'=>'发生错误，请联系网站管理员']);
+        }
+    }
+
+
+
+    /*
+     * 点赞
+     */
+    public function star(Request $request){
+
+        $status = $request->status;
+        $model = UserStar::where('user_id', $request->user_id)
+            ->where('article_id', $request->article_id)
+            ->first();
+
+        if($model && $status == 'del'){
+            $model->status = '0';
+            $model->save();
+            $status = 'del';
+        }else if($model && $status == 'add'){
+            $model->status = '1';
+            $model->save();
+            $status == 'add';
+        }else if(empty($model) && $status == 'add'){
+
+            $data = [];
+            $data['user_id'] = $request->user_id;
+            $data['article_id'] = $request->article_id;
+            UserStar::create($data);
+            $status == 'add';
+        }
+
+        return response()->json(([
+            'status' => $status,
+            'msg'=>'success',
+        ]), 200);
+
+    }
+
+
+    /*
+     * 收藏
+     */
+    public function collect(Request $request){
+
+        $status = $request->status;
+        $model = UserCollect::where('user_id', $request->user_id)
+            ->where('article_id', $request->article_id)
+            ->first();
+
+        if($model && $status == 'del'){
+
+            $model->status = '0';
+            $model->save();
+            $status = 'del';
+        }else if($model && $status == 'add'){
+
+            $model->status = '1';
+            $model->save();
+            $status == 'add';
+        }else if(empty($model) && $status == 'add'){
+
+            $data = [];
+            $data['user_id'] = $request->user_id;
+            $data['article_id'] = $request->article_id;
+            UserCollect::create($data);
+            $status == 'add';
+        }
+
+        return response()->json(([
+            'status' => $status,
+            'msg'=>'success',
+        ]), 200);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

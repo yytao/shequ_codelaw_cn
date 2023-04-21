@@ -16,6 +16,12 @@
     font-size: 3.5vw;
     color: rgb(127,127,127);
 }
+
+.tag_active{
+    color: black;
+    text-decoration: underline 0.3vw;
+}
+
 #all-content{
     color:black;
     text-decoration: underline 0.3vw;
@@ -51,4 +57,9 @@
 
 #chongdang{
     height: 11vh;
+}
+
+.post-title
+{
+    height: 10vw;
 }

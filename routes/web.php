@@ -17,7 +17,7 @@ Route::group(['middleware'=>['setLocale']], function(){
 
     Auth::routes();
 
-    Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('home');
+    Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryAll');
     Route::get('/share', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryShare');
     Route::get('/unused', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryUnused');
     Route::get('/renting', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryRenting');
@@ -27,9 +27,13 @@ Route::group(['middleware'=>['setLocale']], function(){
 
 //    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-    Route::group(['middleware'=>['setLocale']], function(){
-        Route::get('/user', [\App\Http\Controllers\IndexController::class, 'user']);
-        Route::get('/post', [\App\Http\Controllers\IndexController::class, 'post']);
+    Route::group(['middleware'=>['auth']], function(){
+        Route::get('/user', [\App\Http\Controllers\UserController::class, 'user']);
+        Route::get('/post', [\App\Http\Controllers\ArticleController::class, 'post']);
+        Route::post('/post', [\App\Http\Controllers\ArticleController::class, 'postContent'])->name('postContent');
+
+        Route::post('/article/star', [\App\Http\Controllers\ArticleController::class, 'star'])->name('star');
+        Route::post('/article/collect', [\App\Http\Controllers\ArticleController::class, 'collect'])->name('collect');
 
     });
 
@@ -37,4 +41,3 @@ Route::group(['middleware'=>['setLocale']], function(){
 
 //修改语言
 Route::get('/changeLocale/{locale}', [\App\Http\Controllers\IndexController::class, 'changeLocale']);
-

@@ -4,6 +4,7 @@
     background-color: white;
     z-index: 999;
     width: 100%;
+    height: 18vw;
 }
 
 #fenge {
@@ -12,7 +13,7 @@
 
 .navi-tubiao {
     width: 11vw;
-    top: 2vw;
+    bottom: 1vw;
 }
 
 #message {

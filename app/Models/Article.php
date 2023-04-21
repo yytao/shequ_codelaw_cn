@@ -25,4 +25,20 @@ class Article extends Model
         return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
+
+    public function comment()
+    {
+        return $this->hasMany(ArticleComment::class, 'id', 'article_id');
+    }
+
+    public function star()
+    {
+        return $this->hasMany(UserStar::class, 'id', 'article_id');
+    }
+
+    public function collect()
+    {
+        return $this->hasMany(UserCollect::class, 'id', 'article_id');
+    }
+
 }

@@ -193,6 +193,9 @@ return [
         //custom
         'schoolCard' => '学生证明',
         'captcha' => '验证码',
+        'articleContent' => '帖子内容',
+        'articleCategory' => '帖子分类',
+
     ],
     'custom'               => [
         'attribute-name' => [

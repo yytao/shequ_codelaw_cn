@@ -3,12 +3,11 @@
 }
 .text-title{
     display: inline-block;
-    position: relative;
-    top:-1vh;
-    left: 2vw;
+    vertical-align: middle;
+    padding-left: 3vw;
 }
 .name-title{
-    font-size: 3vw;
+    font-size: 4vw;
 }
 .time-title{
     font-size: 3vw;
@@ -17,14 +16,17 @@
     top:0.8vh;
 }
 .post-content{
-    font-size: 3.8vw;
-    position: relative;
-    left: 14vw;
-    width: 80vw;
+    font-size: 4.5vw;
+    padding-top: 5vw;
+    padding-left: 14vw;
+    width: 100%;
+
 }
 .content-in{
+    display: block;
     text-decoration: none;
     color: black;
+    margin-bottom: 5vw;
 }
 .post-picture{
     width: 30vw;
@@ -39,6 +41,9 @@
 .post-tubiao{
     width: 6vw;
     position: relative;
-    left: 35vw;
-    top:1vh;
+    left: 25vw;
+}
+
+.like-btn, .collect-btn{
+    margin-right: 3vw;
 }

@@ -14,6 +14,7 @@ return [
     'social'                => '交友',
     'collect'               => '收藏',
     'please_text'           => '请输入内容：',
+    'select_category'       => '请选择分类：',
 
 
     //user页面部分

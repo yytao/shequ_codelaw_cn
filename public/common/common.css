@@ -31,12 +31,12 @@ img{
     vertical-align:baseline;
 }
 a, a:link, a:visited{
-    color:#000;
+    color:#000!important;
     text-decoration:none;
 }
 a:hover{
-    color:#000;
-    text-decoration:underline;
+    color:#000!important;
+    text-decoration:none;
 }
 /* 标签属性，textarea,input 强制输入时内容超出时换行，打断 */
 textarea,input{
@@ -49,8 +49,6 @@ span,p,div{
 .lf{ float:left; }
 .rt{ float:right; }
 .clearfix{ content: ''; display: block; clear: both; }
-
-
 
 
 .post{
