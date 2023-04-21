@@ -27,7 +27,7 @@ class IndexController extends Controller{
         $query = Article::query();
         $query->where('status', '1');
         $user = Auth::user();
-
+        
         switch ($route){
             case 'CategoryShare':
                 $query->where('category_id', 1);
@@ -47,12 +47,12 @@ class IndexController extends Controller{
 
 
         $userStar = UserStar::where('status', '1')
-            ->where('user_id', $user->id)
+            ->where('user_id', $user->id??0)
             ->pluck('article_id')
             ->toArray();
 
         $userCollect = UserCollect::where('status', '1')
-            ->where('user_id', $user->id)
+            ->where('user_id', $user->id??0)
             ->pluck('article_id')
             ->toArray();
 

@@ -104,7 +104,7 @@
             </div>
         </div>
         @endforeach
-        <input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
+        <input type="hidden" name="user_id" id="user_id" value="{{ $user->id??0 }}">
     </div>
     <img src="/common/pictures/1/launch.png" id="launch" />
 
