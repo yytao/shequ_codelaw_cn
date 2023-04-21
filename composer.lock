@@ -6319,21 +6319,21 @@
         },
         {
             "name": "dragon-code/contracts",
-            "version": "v2.19.0",
+            "version": "v2.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TheDragonCode/contracts.git",
-                "reference": "b50ceb575da285c68615bf759d2bb3288aaa4b25"
+                "reference": "644ac91d9df96ebec3a46c0d2cc8ff51a83cbfad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TheDragonCode/contracts/zipball/b50ceb575da285c68615bf759d2bb3288aaa4b25",
-                "reference": "b50ceb575da285c68615bf759d2bb3288aaa4b25",
+                "url": "https://api.github.com/repos/TheDragonCode/contracts/zipball/644ac91d9df96ebec3a46c0d2cc8ff51a83cbfad",
+                "reference": "644ac91d9df96ebec3a46c0d2cc8ff51a83cbfad",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2.5 || ^8.0",
-                "psr/http-message": "^1.0.1",
+                "psr/http-message": "^1.0.1 || ^2.0",
                 "symfony/http-kernel": "^4.0 || ^5.0 || ^6.0",
                 "symfony/polyfill-php80": "^1.23"
             },
@@ -6341,7 +6341,7 @@
                 "andrey-helldar/contracts": "*"
             },
             "require-dev": {
-                "illuminate/database": "^8.0",
+                "illuminate/database": "^10.0",
                 "phpdocumentor/reflection-docblock": "^5.0"
             },
             "type": "library",
@@ -6387,7 +6387,7 @@
                     "type": "yoomoney"
                 }
             ],
-            "time": "2022-10-10T22:02:52+00:00"
+            "time": "2023-04-19T08:23:59+00:00"
         },
         {
             "name": "dragon-code/pretty-array",
