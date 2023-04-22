@@ -85,8 +85,7 @@
     @if($user)
         <input type="text" class="form-control comment-bottom-input" id="comment-bottom-input" placeholder="评论">
     @else
-{{--        <input type="text" class="form-control comment-bottom-input" disabled placeholder="请先登录">--}}
-        <input type="text" class="form-control comment-bottom-input" id="comment-bottom-input" placeholder="评论">
+        <input type="text" class="form-control comment-bottom-input" disabled placeholder="请先登录">
     @endif
 
     @if(in_array($article->id, $userStar))
