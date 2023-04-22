@@ -25,6 +25,9 @@ Route::group(['middleware'=>['setLocale']], function(){
     Route::get('/a/{article_id}', [\App\Http\Controllers\ArticleController::class, 'index']);
     Route::get('/verify', [App\Http\Controllers\Auth\RegisterController::class, 'verifyUser'])->name('verify.user');
 
+    //检索
+    Route::get('/search', [App\Http\Controllers\IndexController::class, 'search'])->name('search');
+
 //    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     Route::group(['middleware'=>['auth']], function(){

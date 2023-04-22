@@ -27,7 +27,7 @@ class IndexController extends Controller{
         $query = Article::query();
         $query->where('status', '1');
         $user = Auth::user();
-        
+
         switch ($route){
             case 'CategoryShare':
                 $query->where('category_id', 1);
@@ -64,6 +64,31 @@ class IndexController extends Controller{
             'userCollect'
         ));
     }
+
+
+
+    /*
+     * 检索
+     */
+    public function search(Request $request){
+        $sword = $request->sword;
+
+        $result = Article::where('content', 'like', '%'.$sword.'%')->get();
+        
+
+        return view('search', compact(
+            'sword',
+            'result'
+        ));
+    }
+
+
+
+
+
+
+
+
 
 
 

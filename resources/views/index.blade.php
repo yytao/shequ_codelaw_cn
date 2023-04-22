@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
     <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>{{ __('views.appName') }}</title>
     <link rel="stylesheet" type="text/css" href="/common/common.css" />
@@ -12,7 +10,6 @@
     <link rel="stylesheet" type="text/css" href="/common/css/navi.css" />
     <script src="/common/js/jq/jquery.js"></script>
     <script src="/common/js/1.js"></script>
-
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -72,7 +69,7 @@
                 <img class="photo" src="/common/pictures/1/photo.png" />
                 <div class="text-title">
                     <div class="name-title">{{ $item->user->name }}</div>
-                    <div class="time-title">{{ $item->created_at }}</div>
+                    <div class="time-title">{{ $item->created_at->format('Y年m月d日') }}</div>
                 </div>
             </div>
             <a class="content-in" href="2.html">

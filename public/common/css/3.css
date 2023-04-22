@@ -3,14 +3,12 @@
     height: 13vh;
 }
 #search-result-num{
-    position: relative;
-    top: 11vh;
+    padding: 3vw;
+    padding-top: 30vw;
+    padding-bottom: 20vw;
 }
 #result-num{
-    position: relative;
-    left: 1.5vw;
-    top:1.5vh;
-    font-size: 3.5vw;
+    font-size: 4.5vw;
 }
 .results{
     font-size: 3.5vw;
