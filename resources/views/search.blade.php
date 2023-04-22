@@ -1,5 +1,5 @@
 @extends('layout.fullHeader')
-@section('title', '检索结果 - ')
+@section('title', '检索结果')
 @section('style')
     @parent
     <link rel="stylesheet" href="/common/css/top.css">
@@ -18,13 +18,13 @@
         <hr>
 
         @foreach($result as $k=>$item)
-        <a class="results" href="2.html">
+        <a class="results" href="/a/{{ $item->id }}">
             <div class="result-text">
                 {!! $item->content !!}
             </div>
             <div class="result-other">
                 <span class="result-name">{{ $item->user->name }}</span>
-                <span class="result-time">{{ $item->created_at->format('Y年m月d日') }}</span>
+                <span class="result-time">{{ $item->created_at->diffForHumans() }}</span>
             </div>
             <hr class="geduan">
         </a>

@@ -22,11 +22,13 @@ Route::group(['middleware'=>['setLocale']], function(){
     Route::get('/unused', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryUnused');
     Route::get('/renting', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryRenting');
     Route::get('/social', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategorySocial');
-    Route::get('/a/{article_id}', [\App\Http\Controllers\ArticleController::class, 'index']);
+
     Route::get('/verify', [App\Http\Controllers\Auth\RegisterController::class, 'verifyUser'])->name('verify.user');
 
     //检索
     Route::get('/search', [App\Http\Controllers\IndexController::class, 'search'])->name('search');
+
+    Route::get('/a/{article_id}', [\App\Http\Controllers\ArticleController::class, 'index']);
 
 //    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -37,6 +39,8 @@ Route::group(['middleware'=>['setLocale']], function(){
 
         Route::post('/article/star', [\App\Http\Controllers\ArticleController::class, 'star'])->name('star');
         Route::post('/article/collect', [\App\Http\Controllers\ArticleController::class, 'collect'])->name('collect');
+        Route::post('/article/comment', [\App\Http\Controllers\ArticleController::class, 'postComment'])->name('postComment');
+
 
     });
 

@@ -13,17 +13,17 @@
 
 .navi-tubiao {
     width: 11vw;
-    bottom: 1vw;
+    top: 3vw;
 }
 
 #message {
     position: relative;
-    left: 5vw;
+    left: 10vw;
 }
 
 #community {
     position: relative;
-    left: 30vw;
+    left: 33vw;
 }
 
 #myself {

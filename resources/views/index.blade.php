@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>{{ __('views.appName') }}</title>
+    <title>首页 - {{ __('views.appName') }}</title>
     <link rel="stylesheet" type="text/css" href="/common/common.css" />
     <link rel="stylesheet" type="text/css" href="/common/css/top.css" />
     <link rel="stylesheet" type="text/css" href="/common/css/1.css" />
@@ -24,7 +24,10 @@
 
 <div id="top-two">
     <div id="top-bar">
-        <img id="logo" src="/common/pictures/1/logo.png" />
+        <a href="/">
+            <img id="logo" src="/common/pictures/1/logo.png" />
+        </a>
+
         <div id="search-bar">
             <div id="search-both">
                 <form action="/search" method="get" id="searchForm">
@@ -69,10 +72,10 @@
                 <img class="photo" src="/common/pictures/1/photo.png" />
                 <div class="text-title">
                     <div class="name-title">{{ $item->user->name }}</div>
-                    <div class="time-title">{{ $item->created_at->format('Y年m月d日') }}</div>
+                    <div class="time-title">{{ $item->created_at->diffForHumans() }}</div>
                 </div>
             </div>
-            <a class="content-in" href="2.html">
+            <a class="content-in" href="/a/{{ $item->id }}">
                 <div class="post-content">
                     {!! $item->content !!}
                 </div>
@@ -81,21 +84,21 @@
             <div class="post-bottom">
                 <span class="post-num">#{{ $item->category->category_name }}&nbsp;</span>
                 <span class="post-num" >点赞：{{$item->star}}&nbsp;</span>
-                <span class="post-num" >评论：8</span>
+                <span class="post-num" >评论：{{ count($item->comment) }}</span>
                 @if(in_array($item->id, $userStar))
                     <img id="like-btn" class="post-tubiao like-btn" data-status="del" data-id="{{ $item->id }}" src="/common/pictures/1/like2.png" />
                 @else
                     <img id="like-btn" class="post-tubiao like-btn" data-status="add" data-id="{{ $item->id }}" src="/common/pictures/1/like.png" />
                 @endif
 
-
                 @if(in_array($item->id, $userCollect))
                     <img id="collect-btn" class="post-tubiao collect-btn" data-status="del" data-id="{{ $item->id }}" src="/common/pictures/1/collect2.png" />
                 @else
                     <img id="collect-btn" class="post-tubiao collect-btn" data-status="add" data-id="{{ $item->id }}" src="/common/pictures/1/collect.png" />
                 @endif
-
-                <img class="post-tubiao comment-btn" src="/common/pictures/1/comment.png" />
+                <a href="/a/{{ $item->id }}">
+                    <img class="post-tubiao comment-btn" src="/common/pictures/1/comment.png" />
+                </a>
 
                 {{-- <img class="post-tubiao share-tubiao" src="/common/pictures/1/share.png" /> --}}
             </div>

@@ -33,9 +33,10 @@
 }
 
 #content-bar{
-    width: 93vw;
-    position: relative;
-    top: 7vh;
+    width: 100%;
+    padding: 2vw;
+    padding-top: 25vw;
+    padding-bottom: 15vw;
 }
 .line{
     height:1px;

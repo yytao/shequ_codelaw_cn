@@ -3,7 +3,7 @@
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>@yield('title'){{ __('views.appName') }}</title>
+    <title>@yield('title') - {{ __('views.appName') }}</title>
 
     @section('style')
         <link rel="stylesheet" type="text/css" href="/common/common.css" />

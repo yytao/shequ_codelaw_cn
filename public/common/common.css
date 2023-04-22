@@ -5,10 +5,11 @@
     -webkit-tap-highlight-color: transparent;
 }
 html,body{
-    color:#000;
-    background:#fff;
+    color:#000 !important;
+    background:#fff !important;
     font:12px/22px Verdana,Arial,sans-serif,"Times New Roman",思源宋体;
     width:100%;
+
 }
 input,select,button{
     font-size:100%;
@@ -63,13 +64,48 @@ span,p,div{
 }
 
 
+.comment-bottom-input{
+    margin: 1.5vw;
+    width: 60% !important;
+    display: inline !important;
+}
+
+.comment-form{
+    z-index: 999999;
+    height: 30vw;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: none;
+    background: #FFF;
+    border-top-right-radius: 2vw;
+    border-top-left-radius: 2vw;
+}
+
+.comment_textarea{
+    width: 90% !important;
+    margin: 3vw auto;
+}
+.comment-btn{
+    float: right;
+    margin: 2vw 10vw;
+}
 
 
-
-
-
-
-
+.mask{
+    display: none;
+    position:fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    background:#000\9;/*CSS Hack,只能对ie9以下浏览器ie6,ie7,ie8有效，否侧ie10,FF,Cherome会失去透明效果*/
+    filter:Alpha(opacity=60);/*只对ie7,ie8有效*/
+    z-index:99999;
+}
 
 
 

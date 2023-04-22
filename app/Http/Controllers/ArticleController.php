@@ -6,6 +6,7 @@
  */
 namespace App\Http\Controllers;
 use App\Models\Article;
+use App\Models\ArticleComment;
 use App\Models\Category;
 use App\Models\UserCollect;
 use App\Models\UserStar;
@@ -19,7 +20,30 @@ class ArticleController extends Controller{
 
     public function __construct()
     {
-        Auth::check();
+        $check = Auth::check();
+    }
+
+    public function index(Request $request, $article_id)
+    {
+        $article = Article::findOrFail($article_id);
+
+        $user = Auth::user();
+        $userStar = UserStar::where('status', '1')
+            ->where('user_id', $user->id??0)
+            ->pluck('article_id')
+            ->toArray();
+
+        $userCollect = UserCollect::where('status', '1')
+            ->where('user_id', $user->id??0)
+            ->pluck('article_id')
+            ->toArray();
+
+        return view('article_detail', compact(
+            'article',
+            'user',
+            'userStar',
+            'userCollect'
+        ));
     }
 
     /*
@@ -142,20 +166,32 @@ class ArticleController extends Controller{
             'status' => $status,
             'msg'=>'success',
         ]), 200);
-
     }
 
 
+    public function postComment(Request $request)
+    {
+        try {
+            $article = new ArticleComment();
+            $article->article_id = $request->article_id;
+            $article->content = $request->comment_textarea;
+            $article->user_id = Auth::user()->id;
+            $article->reply_to = $request->reply_to;
+            $article->created_at = time();
+            $article->save();
 
+            if ($article != null)
+            {
+                return redirect()->back()->withErrors(['suc'=>'评论成功']);
+            }
 
+            // show error message
+            return redirect()->back()->withErrors(['err'=>'评论失败']);
+        } catch (Exception $exception){
 
-
-
-
-
-
-
-
+            return redirect()->back()->withErrors(['err'=>'评论失败']);
+        }
+    }
 
 
 
