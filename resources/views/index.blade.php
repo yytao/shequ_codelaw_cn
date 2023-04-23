@@ -97,7 +97,7 @@
                     <img id="collect-btn" class="post-tubiao collect-btn" data-status="add" data-id="{{ $item->id }}" src="/common/pictures/1/collect.png" />
                 @endif
                 <a href="/a/{{ $item->id }}">
-                    <img class="post-tubiao comment-btn" src="/common/pictures/1/comment.png" />
+                    <img class="post-tubiao" src="/common/pictures/1/comment.png" />
                 </a>
 
                 {{-- <img class="post-tubiao share-tubiao" src="/common/pictures/1/share.png" /> --}}
