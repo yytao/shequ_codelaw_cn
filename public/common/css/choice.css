@@ -1,31 +1,33 @@
 #chongdang{
-  height: 18.5vh;
+    height: 18.5vh;
 }
 #dingbu-choose{
-  background-color: white;
-  height: 16vh;
-  position: relative;
-  top:-1vh
+    clear: both;
+    background-color: white;
+    height: 20vh;
+    position: relative;
+    top:-1vh;
+    text-align: center;
 }
 .ding-choose{
-  width: 30vw;
-  display: inline-block;
-  font-size: 4vw;
-  vertical-align: top;
-  text-align: center;
-  color: black;
-  text-decoration: none;
-  position: relative;
-  top:1vh;
-  z-index: 999;
+    width: 18vh;
+    display: inline-block;
+    font-size: 3vh;
+    vertical-align: top;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    position: relative;
+    top:1vh;
+    z-index: 999;
 }
+
 .ding-tubiao{
-  width: 14vw;
+    width: 9vh;
 }
 .ding-fenge{
-  width: 22vw;
-
+    width: 13vh;
 }
 .weixuan{
-  display: none;
+    display: none;
 }

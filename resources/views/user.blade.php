@@ -1,70 +1,86 @@
-@extends('layout.header')
-@section('title', '')
-@section('style')
-    @parent
-    <link rel="stylesheet" href="{{ asset('common/css/index.css') }}">
-@endsection
+<!DOCTYPE html>
+<html>
 
-@section('script')
-    @parent
-@endsection
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>首页 - {{ __('views.appName') }}</title>
+    <script src="/common/js/jq/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/common/common.css" />
+    <link rel="stylesheet" type="text/css" href="/common/css/navi.css" />
+    <link rel="stylesheet" type="text/css" href="/common/css/5.css" />
+    <link rel="stylesheet" type="text/css" href="/common/css/choice.css" />
+    <link rel="stylesheet" type="text/css" href="/common/css/mypost.css" />
 
 
-@section("body")
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
 
-
-    <div data-v-97483f64="" class="main-page-wrap navbar-view navbar-transition-slide fixed-padding">
-        <div><div data-v-cf2da122="" class="user-center-wrap">
-                <div data-v-178e9d9c="" data-v-cf2da122="" class="user-card-nav-wrap">
-                    <div data-v-178e9d9c="" class="avatar" style="background-image: url(&quot;/common/image/people_default.jpg&quot;);"></div>
-
-                    <div data-v-178e9d9c="" class="user-info"><div data-v-178e9d9c="" class="user-name"> {{ $user->name }}
-                            <svg data-v-178e9d9c class="bi bi-gender-male user-sex-icon">
-                                <path fill-rule="evenodd" d="M9.5 2a.5.5 0 0 1 0-1h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.707L9.871 6.836a5 5 0 1 1-.707-.707L13.293 2H9.5zM6 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
-                            </svg>
-                        </div>
-                        <div data-v-178e9d9c="" class="user-sign">{{ __('views.empty_intro') }}</div>
-                    </div><!---->
-                </div>
-                <ul data-v-cf2da122="" class="user-center-ul">
-                    <li data-v-cf2da122="">
-                        <div data-v-5b06c658="" data-v-cf2da122="" class="nav-title-wrap">
-                            <svg data-v-5b06c658="" class="nav-title-type-icon">
-                                <use xlink:href="#wo_list_ post_outlined_24"></use>
-                            </svg>
-                            <span data-v-5b06c658="">{{ __('views.my_post') }}</span>
-                            <svg data-v-5b06c658="" class="nav-title-more-icon">
-                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                            </svg>
-                        </div>
-                    </li>
-
-                    <li data-v-cf2da122="">
-                        <div data-v-5b06c658="" data-v-cf2da122="" class="nav-title-wrap">
-                            <svg data-v-5b06c658="" class="nav-title-type-icon">
-                                <use xlink:href="#wo_list_collect_outlined_24"></use>
-                            </svg>
-                            <span data-v-5b06c658="">{{ __('views.my_collect') }}</span>
-                            <svg data-v-5b06c658="" class="nav-title-more-icon">
-                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                            </svg>
-                        </div>
-                    </li>
-                    <li data-v-cf2da122="">
-                        <div data-v-5b06c658="" data-v-cf2da122="" class="nav-title-wrap">
-                            <svg data-v-5b06c658="" class="nav-title-type-icon">
-                                <use xlink:href="#wo_list_complaint_outlined_24"></use>
-                            </svg>
-                            <span data-v-5b06c658="">{{ __('views.report') }}</span>
-                            <svg data-v-5b06c658="" class="nav-title-more-icon">
-                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                            </svg>
-                        </div>
-                    </li>
-                </ul>
+<body>
+<div id="fix">
+    <!-- 固定顶部 -->
+    <div id="self">
+        <!-- 个人信息 -->
+        <div id="information">
+            <img id="photo" src="/common/pictures/5/photo.png" />
+            <div style="width: 15vh;height: 10vh;float: left">
+                <div id="name">{{ $user->name }}</div>
+                <div id="IDnum">ID：{{ $user->user_code }}</div>
+                <div id="IPaddress">IP属地：北京</div>
             </div>
-            <div data-v-502af113="" class="log-out-wrap"> {{ __('views.logout') }} </div>
+            <a href="9.html">
+                <img id="out" src="/common/pictures/5/out.png" />
+            </a>
         </div>
     </div>
 
-@endsection
+    <div id="dingbu-choose">
+        <a id="ding-my-post" class="ding-choose" href="{{ route('user') }}">
+            <img src="/common/pictures/5/mywords2.png" class="ding-tubiao">
+            <div style="color: rgb(122,146,203);">我的发帖</div>
+            <img src="/common/pictures/5/mywords-highlight.png" class="ding-fenge">
+        </a>
+        <a id="ding-my-collect" class="ding-choose" href="6.html">
+            <img src="/common/pictures/5/collect.png" class="ding-tubiao">
+            <div>我的收藏</div>
+            <img src="/common/pictures/5/mywords-highlight.png" class="ding-fenge weixuan">
+        </a>
+        <a id="ding-my-message" class="ding-choose" href="7.html">
+            <img src="/common/pictures/5/password.png" class="ding-tubiao">
+            <div>信息设置</div>
+            <img src="/common/pictures/5/mywords-highlight.png" class="ding-fenge weixuan">
+        </a>
+    </div>
+</div>
+<!-- 我的发帖 -->
+<div id="my-posts">
+
+    @foreach($post as $k=>$item)
+    <div class="my-post">
+        <a class="content-in" href="2.html">
+            <div class="post-content">
+                {!! $item->content !!}
+            </div>
+        </a>
+        <div class="post-date">
+            <span class="post-num">{{ $item->created_at->format('Y年m月d日 H:i') }}</span>
+            <span id="divider">
+          <hr />
+        </span>
+        </div>
+    </div>
+    @endforeach
+
+
+</div>
+
+<!-- 底部导航栏 -->
+@include('layout.footer')
+</body>
+
+</html>

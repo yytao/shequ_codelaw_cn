@@ -28,20 +28,23 @@ Route::group(['middleware'=>['setLocale']], function(){
     //检索
     Route::get('/search', [App\Http\Controllers\IndexController::class, 'search'])->name('search');
 
-    Route::get('/a/{article_id}', [\App\Http\Controllers\ArticleController::class, 'index']);
 
 //    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     Route::group(['middleware'=>['auth']], function(){
-        Route::get('/user', [\App\Http\Controllers\UserController::class, 'user']);
+        Route::get('/user', [\App\Http\Controllers\UserController::class, 'index'])->name('user');
+
+
         Route::get('/post', [\App\Http\Controllers\ArticleController::class, 'post']);
         Route::post('/post', [\App\Http\Controllers\ArticleController::class, 'postContent'])->name('postContent');
 
+        Route::get('/a/{article_id}', [\App\Http\Controllers\ArticleController::class, 'index']);
         Route::post('/article/star', [\App\Http\Controllers\ArticleController::class, 'star'])->name('star');
         Route::post('/article/collect', [\App\Http\Controllers\ArticleController::class, 'collect'])->name('collect');
         Route::post('/article/comment', [\App\Http\Controllers\ArticleController::class, 'postComment'])->name('postComment');
 
 
+        Route::get('/message', [\App\Http\Controllers\IndexController::class, 'index'])->name('message');
     });
 
 });
