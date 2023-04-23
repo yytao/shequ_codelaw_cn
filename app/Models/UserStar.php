@@ -14,4 +14,8 @@ class UserStar extends Model
         return $date->format('Y-m-d H:i:s');
     }
 
+    public function article()
+    {
+        return $this->hasOne(Article::class, 'article_id', 'id')->where('status', '1');
+    }
 }

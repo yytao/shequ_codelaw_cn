@@ -103,8 +103,10 @@ class ArticleController extends Controller{
      */
     public function star(Request $request){
 
+        $user = Auth::user();
+
         $status = $request->status;
-        $model = UserStar::where('user_id', $request->user_id)
+        $model = UserStar::where('user_id', $user->id)
             ->where('article_id', $request->article_id)
             ->first();
 
@@ -119,7 +121,7 @@ class ArticleController extends Controller{
         }else if(empty($model) && $status == 'add'){
 
             $data = [];
-            $data['user_id'] = $request->user_id;
+            $data['user_id'] = $user->id;
             $data['article_id'] = $request->article_id;
             UserStar::create($data);
             $status == 'add';
@@ -138,8 +140,9 @@ class ArticleController extends Controller{
      */
     public function collect(Request $request){
 
+        $user = Auth::user();
         $status = $request->status;
-        $model = UserCollect::where('user_id', $request->user_id)
+        $model = UserCollect::where('user_id', $user->id)
             ->where('article_id', $request->article_id)
             ->first();
 
@@ -156,7 +159,7 @@ class ArticleController extends Controller{
         }else if(empty($model) && $status == 'add'){
 
             $data = [];
-            $data['user_id'] = $request->user_id;
+            $data['user_id'] = $user->id;
             $data['article_id'] = $request->article_id;
             UserCollect::create($data);
             $status == 'add';

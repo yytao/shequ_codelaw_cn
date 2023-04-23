@@ -10,6 +10,12 @@
 
 @section('script')
     @parent
+    <script>
+        import Index from "../../public/common/js/jq/jQ-jQUI/jqui/index.html";
+        export default {
+            components: {Index}
+        }
+    </script>
 @endsection
 
 @section("body")
@@ -18,16 +24,14 @@
     <div id="my-posts">
         @foreach($post as $k=>$item)
             <div class="my-post">
-                <a class="content-in" href="/a/{{ $item->id }}">
+                <a class="content-in" href="2.html">
                     <div class="post-content">
                         {!! $item->content !!}
                     </div>
                 </a>
                 <div class="post-date">
                     <span class="post-num">{{ $item->created_at->format('Y年m月d日 H:i') }}</span>
-                    <span id="divider">
-                        <hr />
-                    </span>
+                    <span id="divider"> <hr /> </span>
                 </div>
             </div>
         @endforeach

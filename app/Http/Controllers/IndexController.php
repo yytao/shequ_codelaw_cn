@@ -74,7 +74,7 @@ class IndexController extends Controller{
         $sword = $request->sword;
 
         $result = Article::where('content', 'like', '%'.$sword.'%')->get();
-        
+
 
         return view('search', compact(
             'sword',
@@ -108,6 +108,9 @@ class IndexController extends Controller{
 
         $route = Route::currentRouteName();
         $view->with('route', $route);
+
+        $routeAll = Route::getCurrentRoute();
+        $view->with('routeAll', $routeAll);
 
         $locale = Session::get('locale');
         $view->with('locale', $locale);

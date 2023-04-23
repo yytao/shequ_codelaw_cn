@@ -9,6 +9,7 @@ use App\Models\Article;
 use App\Models\UserCollect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 class UserController extends Controller{
 
@@ -38,11 +39,11 @@ class UserController extends Controller{
 
         $user = Auth::user();
 
-        $article = UserCollect::where('user_id', $user->id)->get();
+        $collect = UserCollect::where('user_id', $user->id)->where('status', '1')->get();
 
-        return view('user', compact(
+        return view('userCollect', compact(
             'user',
-            'article'
+            'collect'
 
         ));
     }
@@ -52,15 +53,13 @@ class UserController extends Controller{
      * user page
      * 信息设置
      */
-    public function infoEdit(Request $request){
+    public function edit(Request $request){
 
         $user = Auth::user();
 
-        $article = Article::where('user_id', $user->id)->get();
 
-        return view('user', compact(
+        return view('userEdit', compact(
             'user',
-            'article'
 
         ));
     }

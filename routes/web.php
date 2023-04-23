@@ -16,27 +16,29 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware'=>['setLocale']], function(){
 
     Auth::routes();
-
-    Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryAll');
-    Route::get('/share', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryShare');
-    Route::get('/unused', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryUnused');
-    Route::get('/renting', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryRenting');
-    Route::get('/social', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategorySocial');
-
     Route::get('/verify', [App\Http\Controllers\Auth\RegisterController::class, 'verifyUser'])->name('verify.user');
 
-    //检索
-    Route::get('/search', [App\Http\Controllers\IndexController::class, 'search'])->name('search');
+    Route::group(['namespace'=>'post'], function (){
+        Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryAll');
+        Route::get('/share', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryShare');
+        Route::get('/unused', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryUnused');
+        Route::get('/renting', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryRenting');
+        Route::get('/social', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategorySocial');
+
+        //检索
+        Route::get('/search', [App\Http\Controllers\IndexController::class, 'search'])->name('search');
+    });
 
 
 //    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     Route::group(['middleware'=>['auth']], function(){
-        Route::get('/user', [\App\Http\Controllers\UserController::class, 'index'])->name('user');
+
+        Route::group(['namespace'=>'message'], function (){
+            Route::get('/message', [\App\Http\Controllers\IndexController::class, 'index'])->name('message');
 
 
-        Route::get('/post', [\App\Http\Controllers\ArticleController::class, 'post']);
-        Route::post('/post', [\App\Http\Controllers\ArticleController::class, 'postContent'])->name('postContent');
+        });
 
         Route::get('/a/{article_id}', [\App\Http\Controllers\ArticleController::class, 'index']);
         Route::post('/article/star', [\App\Http\Controllers\ArticleController::class, 'star'])->name('star');
@@ -44,7 +46,19 @@ Route::group(['middleware'=>['setLocale']], function(){
         Route::post('/article/comment', [\App\Http\Controllers\ArticleController::class, 'postComment'])->name('postComment');
 
 
-        Route::get('/message', [\App\Http\Controllers\IndexController::class, 'index'])->name('message');
+        Route::group(['namespace'=>'post'], function (){
+            Route::get('/post', [\App\Http\Controllers\ArticleController::class, 'post']);
+            Route::post('/post', [\App\Http\Controllers\ArticleController::class, 'postContent'])->name('postContent');
+
+        });
+
+        Route::group(['namespace'=>'user'], function (){
+            Route::get('/user', [\App\Http\Controllers\UserController::class, 'index'])->name('user');
+            Route::get('/user/collect', [\App\Http\Controllers\UserController::class, 'collect'])->name('user.collect');
+            Route::get('/user/edit', [\App\Http\Controllers\UserController::class, 'edit'])->name('user.edit');
+        });
+
+
     });
 
 });
