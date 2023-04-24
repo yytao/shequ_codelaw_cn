@@ -3,8 +3,8 @@
 @section('style')
     @parent
     <link rel="stylesheet" href="/common/css/navi.css">
-    <link rel="stylesheet" href="/common/css/5.css">
     <link rel="stylesheet" href="/common/css/choice.css">
+    <link rel="stylesheet" href="/common/css/5.css">
     <link rel="stylesheet" href="/common/css/mypost.css">
 @endsection
 

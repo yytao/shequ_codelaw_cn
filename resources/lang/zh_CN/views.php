@@ -4,6 +4,7 @@ return [
     'appName'               => '异国',
 
     'publish'               => '发布',
+    'confirm'               => '确认',
     'my'                    => '我的',
     'home'                  => '首页',
     'all'                   => '全部',

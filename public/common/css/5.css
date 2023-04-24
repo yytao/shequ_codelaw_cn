@@ -1,6 +1,5 @@
 #my-posts {
-    position: relative;
-    padding-top: 25px;
+    padding-top: 58vw;
     padding-bottom: 10px;
 }
 #fix {
@@ -10,50 +9,52 @@
 }
 #information {
     width: 100%;
-    height: 18vh;
+    height: 25vw;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: white;
     position: relative;
     z-index: 9999;
 }
 #photo {
-    margin: 2vh;
-    width: 15vh;
+    margin: 3vw;
+    width: 20vw;
     float: left;
 }
 #name {
-    margin-top: 2vh;
-    margin-left: 1vh;
-    width: 20vh;
+    margin-top: 2vw;
+    margin-left: 1vw;
+    width: 35vw;
     float: left;
-    font-size: 4vh;
+    font-size: 5vw;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 
 }
+
 #IDnum {
     float: left;
-    font-size: 2vh;
+    font-size: 4vw;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 20vh;
-    margin-left: 1vh;
+    width: 40vw;
+    margin-left: 1vw;
 }
 #IPaddress {
     float: left;
-    font-size: 2vh;
-    margin-left: 1vh;
-    width: 20vh;
+    font-size: 4vw;
+    margin-left: 1vw;
+    width: 40vw;
 }
 #out {
     float: right;
-    margin-top: 4vh;
-    margin-right: 4vh;
-    width: 8vh;
+    margin-top: 4vw;
+    margin-right: 4vw;
+    width: 17vw;
 }
 
 .my-post {
-    position: relative;
-    top: 35vh;
     background-color: white;
     display: block;
 }

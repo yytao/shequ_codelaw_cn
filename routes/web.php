@@ -56,8 +56,13 @@ Route::group(['middleware'=>['setLocale']], function(){
             Route::get('/user', [\App\Http\Controllers\UserController::class, 'index'])->name('user');
             Route::get('/user/collect', [\App\Http\Controllers\UserController::class, 'collect'])->name('user.collect');
             Route::get('/user/edit', [\App\Http\Controllers\UserController::class, 'edit'])->name('user.edit');
-        });
 
+            Route::post('/user/edit/n', [\App\Http\Controllers\UserController::class, 'editName'])->name('user.edit.name');
+            Route::post('/user/edit/p', [\App\Http\Controllers\UserController::class, 'editPassword'])->name('user.edit.password');
+
+
+            Route::get('/logout', [\App\Http\Controllers\UserController::class, 'logout'])->name('user.logout');
+        });
 
     });
 

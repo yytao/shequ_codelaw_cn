@@ -1,32 +1,32 @@
 #chongdang{
-    height: 18.5vh;
+    height: 18.5vw;
 }
 #dingbu-choose{
     clear: both;
     background-color: white;
-    height: 20vh;
+    height: 30vw;
     position: relative;
-    top:-1vh;
+    top:-1vw;
     text-align: center;
 }
 .ding-choose{
-    width: 18vh;
+    width: 30vw;
     display: inline-block;
-    font-size: 3vh;
+    font-size: 5vw;
     vertical-align: top;
     text-align: center;
     color: black;
     text-decoration: none;
     position: relative;
-    top:1vh;
+    top:1vw;
     z-index: 999;
 }
 
 .ding-tubiao{
-    width: 9vh;
+    width: 15vw;
 }
 .ding-fenge{
-    width: 13vh;
+    width: 20vw;
 }
 .weixuan{
     display: none;

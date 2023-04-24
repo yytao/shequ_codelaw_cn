@@ -28,12 +28,12 @@
                 <!-- 个人信息 -->
                 <div id="information">
                     <img id="photo" src="/common/pictures/5/photo.png" />
-                    <div style="width: 15vh;height: 10vh;float: left">
+                    <div style="width: 35vw;height: 25vw;float: left">
                         <div id="name">{{ $user->name }}</div>
                         <div id="IDnum">ID：{{ $user->user_code }}</div>
                         <div id="IPaddress">IP属地：北京</div>
                     </div>
-                    <a href="9.html">
+                    <a href="/logout">
                         <img id="out" src="/common/pictures/5/out.png" />
                     </a>
                 </div>
@@ -72,7 +72,7 @@
                         <img src="/common/pictures/5/password.png" class="ding-tubiao">
                     @endif
 
-                    <div @if($route=="user.edit")class="user-nav-active"@endif>信息设置</div>
+                    <div @if($route=="user.edit")style="color: rgb(169,207,249);"@endif>信息设置</div>
                     @if($route == 'user.edit')
                         <img src="/common/pictures/5/mywords-highlight.png" class="ding-fenge">
                     @endif

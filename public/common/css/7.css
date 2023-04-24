@@ -2,8 +2,7 @@ input{
   border: none;
 }
 #alternative {
-  position: relative;
-  top: 35vh;
+    padding-top: 58vw;
 }
 .shadow_css {
   display: none;
@@ -46,7 +45,7 @@ input{
   position: relative;
   top:-1vh;
 }
-#new-name {
+#new_name {
   position: absolute;
   left: 9vw;
   top: 13vh;
@@ -61,24 +60,24 @@ input{
 #no-name {
   position: relative;
   background-color: RGB(169, 207, 249);
-  top: 16vh;
+  top: 25vw;
   left: 9vw;
-  width: 16vw;
-  height: 4vh;
+  width: 12vw;
+  height: 9vw;
   border-radius: 6px;
   text-align: center;
-  line-height: 4vh;
+  line-height: 9vw;
 }
 #yes-name {
   position: relative;
   background-color: RGB(169, 207, 249);
-  top: 12vh;
+  top: 25vw;
   left: 55vw;
   width: 16vw;
-  height: 4vh;
+  height: 10vw;
   border-radius: 6px;
   text-align: center;
-  line-height: 4vh;
+  line-height: 10vw;
 }
 a:link {
   color: black;
@@ -98,7 +97,7 @@ a:link {
   background-color: white;
   z-index: 11;
 }
-#old-password {
+#old_password {
   position: absolute;
   left: 9vw;
   top: 11vh;
@@ -109,7 +108,7 @@ a:link {
   border-color: RGB(242, 242, 242);
   border-radius: 6px;
 }
-#new-password {
+#new_password {
   position: absolute;
   left: 9vw;
   top: 21vh;
@@ -120,7 +119,7 @@ a:link {
   border-color: RGB(242, 242, 242);
   border-radius: 6px;
 }
-#confirm-password {
+#confirm_password {
   position: absolute;
   left: 9vw;
   top: 31vh;
@@ -132,15 +131,15 @@ a:link {
   border-radius: 6px;
 }
 #no-password {
-  position: relative;
-  background-color: RGB(169, 207, 249);
-  top: 33vh;
-  left: 9vw;
-  width: 16vw;
-  height: 4vh;
-  border-radius: 6px;
-  text-align: center;
-  line-height: 4vh;
+    position: relative;
+    background-color: RGB(169, 207, 249);
+    top: 61vw;
+    left: 9vw;
+    width: 12vw;
+    height: 9vw;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 9vw;
 }
 #yes-password {
   position: relative;
@@ -152,4 +151,11 @@ a:link {
   border-radius: 6px;
   text-align: center;
   line-height: 4vh;
+}
+
+
+.confirm-btn{
+    float: right;
+    margin-top: 15vw;
+    margin-top: 15vw;
 }
