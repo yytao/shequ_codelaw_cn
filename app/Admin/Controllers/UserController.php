@@ -28,7 +28,7 @@ class UserController extends AdminController
 
         $grid->column('id', 'ID')->sortable();
 
-        $grid->column('head_img', '头像')->image();
+        $grid->column('school_card', '身份证明')->image();
         $grid->column('name', '用户名');
 
         $grid->column('status','用户状态')->using([
@@ -74,9 +74,17 @@ class UserController extends AdminController
     protected function form()
     {
         $form = new Form(new User);
+        $form->tools(function (Form\Tools $tools) {
+            // 去掉`列表`按钮
+            $tools->disableList();
+            // 去掉`删除`按钮
+            $tools->disableDelete();
+            // 去掉`查看`按钮
+            $tools->disableView();
+        });
 
         $form->text('name', __('用户名'))->required();
-        $form->cropper('head_img', __('用户名'))->move('admin_uploads/article');
+        $form->cropper('school_card', __('身份证明'))->move('admin_uploads/article');
         $form->radio('status', '用户状态')->options(['0'=>'待审核', '1'=>'审核通过', '99'=>'封禁'])->default('0');
 
         return $form;

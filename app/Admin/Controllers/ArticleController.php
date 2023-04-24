@@ -30,6 +30,7 @@ class ArticleController extends AdminController
         $grid->column('id', 'ID')->sortable();
 
         $grid->column('user.name', '发帖用户');
+        $grid->column('category.category_name', '发帖分类');
 
         $grid->column('', '发布内容')->modal('发布内容', function ($model) {
 
@@ -79,10 +80,20 @@ class ArticleController extends AdminController
     protected function form()
     {
         $form = new Form(new Article);
+        $form->tools(function (Form\Tools $tools) {
+            // 去掉`列表`按钮
+            $tools->disableList();
+            // 去掉`删除`按钮
+            $tools->disableDelete();
+            // 去掉`查看`按钮
+            $tools->disableView();
+        });
 
-        $form->text('name', __('用户名'))->required();
-        $form->cropper('head_img', __('用户名'))->move('admin_uploads/article');
-        $form->radio('status', '用户状态')->options(['0'=>'待审核', '1'=>'审核通过', '99'=>'封禁'])->default('0');
+
+        $form->display('category.category_name', __('分类'));
+        $form->display('content', __('发布内容'));
+
+        $form->radio('status', '帖子状态')->options(['0'=>'待审核', '1'=>'审核通过', '99'=>'封禁'])->default('0');
 
         return $form;
     }
