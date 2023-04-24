@@ -18,11 +18,11 @@ $(function(){
             if(res.msg == 'success') {
                 if(res.status == 'add'){
 
-                    $('#like-btn').attr('src','/common/pictures/1/like2.png');
-                    $('#like-btn').attr('data-status', 'del')
+                    $('#like-btn'+article_id).attr('src','/common/pictures/1/like2.png');
+                    $('#like-btn'+article_id).attr('data-status', 'del')
                 }else if(res.status == 'del'){
-                    $('#like-btn').attr('src','/common/pictures/1/like.png');
-                    $('#like-btn').attr('data-status', 'add')
+                    $('#like-btn'+article_id).attr('src','/common/pictures/1/like.png');
+                    $('#like-btn'+article_id).attr('data-status', 'add')
                 }
             } else {
 
@@ -45,11 +45,12 @@ $(function(){
             if(res.msg == 'success') {
                 if(res.status == 'add'){
 
-                    $('#collect-btn').attr('src','/common/pictures/1/collect2.png');
-                    $('#collect-btn').attr('data-status', 'del')
+                    $('#collect-btn'+article_id).attr('src','/common/pictures/1/collect2.png');
+                    $('#collect-btn'+article_id).attr('data-status', 'del')
                 }else if(res.status == 'del'){
-                    $('#collect-btn').attr('src','/common/pictures/1/collect.png');
-                    $('#collect-btn').attr('data-status', 'add')
+
+                    $('#collect-btn'+article_id).attr('src','/common/pictures/1/collect.png');
+                    $('#collect-btn'+article_id).attr('data-status', 'add')
                 }
             } else {
 

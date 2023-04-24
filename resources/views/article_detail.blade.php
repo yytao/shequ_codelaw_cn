@@ -89,15 +89,15 @@
     @endif
 
     @if(in_array($article->id, $userStar))
-        <img id="like-btn" class="post-tubiao like-btn" data-status="del" data-id="{{ $article->id }}" src="/common/pictures/1/like2.png" style="left: 10vw;" />
+        <img id="like-btn{{ $article->id }}" class="post-tubiao like-btn" data-status="del" data-id="{{ $article->id }}" src="/common/pictures/1/like2.png" style="left: 10vw;" />
     @else
-        <img id="like-btn" class="post-tubiao like-btn" data-status="add" data-id="{{ $article->id }}" src="/common/pictures/1/like.png" style="left: 10vw;" />
+        <img id="like-btn{{ $article->id }}" class="post-tubiao like-btn" data-status="add" data-id="{{ $article->id }}" src="/common/pictures/1/like.png" style="left: 10vw;" />
     @endif
 
     @if(in_array($article->id, $userCollect))
-        <img id="collect-btn" class="post-tubiao collect-btn" data-status="del" data-id="{{ $article->id }}" src="/common/pictures/1/collect2.png" style="left: 10vw;" />
+        <img id="collect-btn{{ $article->id }}" class="post-tubiao collect-btn" data-status="del" data-id="{{ $article->id }}" src="/common/pictures/1/collect2.png" style="left: 10vw;" />
     @else
-        <img id="collect-btn" class="post-tubiao collect-btn" data-status="add" data-id="{{ $article->id }}" src="/common/pictures/1/collect.png" style="left: 10vw;" />
+        <img id="collect-btn{{ $article->id }}" class="post-tubiao collect-btn" data-status="add" data-id="{{ $article->id }}" src="/common/pictures/1/collect.png" style="left: 10vw;" />
     @endif
 </div>
 

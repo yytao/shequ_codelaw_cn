@@ -27,7 +27,7 @@
             <div style="width: 100%">
                 <div style="" class="detail-return">
                     <a href="javascript:void(0)" click-action="return">
-                        <img id="detail-return" src="/common/pictures/1/return.png" style="padding-top: 10px;">
+                        <img id="detail-return" src="/common/pictures/1/return.png">
                     </a>
                 </div>
                 <div style="" class="detail-title">

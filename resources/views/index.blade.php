@@ -86,15 +86,15 @@
                 <span class="post-num" >点赞：{{$item->star}}&nbsp;</span>
                 <span class="post-num" >评论：{{ count($item->comment) }}</span>
                 @if(in_array($item->id, $userStar))
-                    <img id="like-btn" class="post-tubiao like-btn" data-status="del" data-id="{{ $item->id }}" src="/common/pictures/1/like2.png" />
+                    <img id="like-btn{{ $item->id }}" class="post-tubiao like-btn" data-status="del" data-id="{{ $item->id }}" src="/common/pictures/1/like2.png" />
                 @else
-                    <img id="like-btn" class="post-tubiao like-btn" data-status="add" data-id="{{ $item->id }}" src="/common/pictures/1/like.png" />
+                    <img id="like-btn{{ $item->id }}" class="post-tubiao like-btn" data-status="add" data-id="{{ $item->id }}" src="/common/pictures/1/like.png" />
                 @endif
 
                 @if(in_array($item->id, $userCollect))
-                    <img id="collect-btn" class="post-tubiao collect-btn" data-status="del" data-id="{{ $item->id }}" src="/common/pictures/1/collect2.png" />
+                    <img id="collect-btn{{ $item->id }}" class="post-tubiao collect-btn" data-status="del" data-id="{{ $item->id }}" src="/common/pictures/1/collect2.png" />
                 @else
-                    <img id="collect-btn" class="post-tubiao collect-btn" data-status="add" data-id="{{ $item->id }}" src="/common/pictures/1/collect.png" />
+                    <img id="collect-btn{{ $item->id }}" class="post-tubiao collect-btn" data-status="add" data-id="{{ $item->id }}" src="/common/pictures/1/collect.png" />
                 @endif
                 <a href="/a/{{ $item->id }}">
                     <img class="post-tubiao" src="/common/pictures/1/comment.png" />
@@ -109,6 +109,7 @@
     <img src="/common/pictures/1/launch.png" id="launch" />
 
     @include('layout.footer')
+    <script src="/common/common.js"></script>
 
 </body>
 </html>

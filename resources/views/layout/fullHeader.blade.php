@@ -11,6 +11,7 @@
 
     @section('script')
         <script src="/common/js/jq/jquery.js"></script>
+        <script src="/common/common.js"></script>
     @show
 
     <script src="{{ asset('js/app.js') }}" defer></script>
