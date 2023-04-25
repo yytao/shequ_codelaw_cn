@@ -1,7 +1,10 @@
 <?php
 
 return [
-    'appName'               => '异国',
+    'appName'               => '来华圈',
+    'index_title'           => '首页',
+    'notice_title'          => '消息通知',
+
 
     'publish'               => '发布',
     'confirm'               => '确认',
@@ -29,7 +32,7 @@ return [
 
 
     //email 相关
-    'email_subject'         => '熊猫生活 邮箱验证',
+    'email_subject'         => '来华圈 邮箱验证',
     'email_hello'           => '你好',
     'email_tip'             => '请点击下方的链接验证您的邮箱激活账号！',
     'email_click'           => '点击这里！',

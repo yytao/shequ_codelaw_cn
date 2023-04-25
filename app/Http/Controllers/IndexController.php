@@ -44,8 +44,6 @@ class IndexController extends Controller{
         }
         $articleList = $query->orderBy('created_at', 'DESC')->take(10)->get();
 
-
-
         $userStar = UserStar::where('status', '1')
             ->where('user_id', $user->id??0)
             ->pluck('article_id')

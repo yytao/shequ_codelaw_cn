@@ -1,8 +1,8 @@
 <div id="navi">
 
 
-    <a href="{{ route('message') }}">
-        @if($routeAll->action['namespace'] == 'message')
+    <a href="{{ route('notice') }}">
+        @if($routeAll->action['namespace'] == 'notice')
             <img id="message" class="navi-tubiao" src="/common/pictures/1/message2.png" />
         @else
             <img id="message" class="navi-tubiao" src="/common/pictures/1/message.png" />

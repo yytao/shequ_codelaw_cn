@@ -34,10 +34,10 @@ Route::group(['middleware'=>['setLocale']], function(){
 
     Route::group(['middleware'=>['auth']], function(){
 
-        Route::group(['namespace'=>'message'], function (){
-            Route::get('/message', [\App\Http\Controllers\IndexController::class, 'index'])->name('message');
-
-
+        Route::group(['namespace'=>'notice'], function (){
+            Route::get('/notice', [\App\Http\Controllers\NoticeController::class, 'index'])->name('notice');
+            Route::post('/notice/clear', [\App\Http\Controllers\NoticeController::class, 'clear'])->name('notice.clear');
+            Route::post('/notice/single', [\App\Http\Controllers\NoticeController::class, 'single'])->name('notice.single');
         });
 
         Route::get('/a/{article_id}', [\App\Http\Controllers\ArticleController::class, 'index']);

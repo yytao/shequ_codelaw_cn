@@ -2,37 +2,53 @@
     position: relative;
     top:1vh;
 }
-#details{
+#notice{
     position: fixed;
-    width: 100vw;
-    height: 7vh;
+    height: 15vw;
     z-index: 999;
     background-color:white;
-    line-height:0vw;   
-    font-size: 4vw; 
+    line-height:0vw;
+    font-size: 4vw;
+    width: 100%;
     /* 顶格 */
-    top: -0.01vh;
-    left: -0.01vh;
+    top: -0.01vw;
+    left: -0.01vw;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-#detail-text{
-    text-align: center;
+
+.notice-button{
+    line-height: 7vw;
+    margin-right: 5vw;
 }
-#detail-button{
+
+.notice-title{
+    line-height: 15vw;
+    width: 55vw;
+    text-align: right;
+    float: left;
+}
+
+
+#notice-text{
+    text-align: center;
+    font-size: 5vw;
+}
+#notice-button{
+    margin-top: 1vw;
+    padding: 2vw;
+    height: 11vw;
+    width: 25vw;
     font-weight: bold;
-    font-size: 4vw;
+    font-size: 5vw;
     color: white;
     float: right;
-    position: relative;
-    right: 3vw;
     border: none;
     border-radius: 1.5vw;
-    background: rgb(169,207,249);
+    background: rgb(122,146,203);
 }
 
 #content-bar{
-    position: relative;
-    top: 5vh;
+    margin-top: 20vw;
 }
 
 .message-left{
@@ -45,14 +61,14 @@
 .message-text{
     width: 80vw;
     font-weight: 100;
-    font-size: 3vw; 
+    font-size: 3vw;
     text-align: left;
     cursor: pointer;
 }
 .message-text2{
     width: 80vw;
     font-weight: 100;
-    font-size: 3vw; 
+    font-size: 3vw;
     text-align: left;
     color: rgb(177, 176, 176);
     cursor: pointer;
@@ -61,3 +77,4 @@
     text-decoration: underline;
     text-underline-offset:1vw;
 }
+

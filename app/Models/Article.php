@@ -35,12 +35,12 @@ class Article extends Model
 
     public function star()
     {
-        return $this->hasMany(UserStar::class, 'id', 'article_id');
+        return $this->hasMany(UserStar::class, 'article_id', 'id')->where('status', '1');
     }
 
     public function collect()
     {
-        return $this->hasMany(UserCollect::class, 'id', 'article_id');
+        return $this->hasMany(UserCollect::class, 'article_id', 'id');
     }
 
 }

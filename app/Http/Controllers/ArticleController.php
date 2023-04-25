@@ -118,6 +118,10 @@ class ArticleController extends Controller{
             $model->status = '1';
             $model->save();
             $status == 'add';
+
+            $to_user = Article::find($request->article_id);
+            \commonHelper::sendNotice($user->id, $to_user->user_id, $request->article_id, 'star');
+
         }else if(empty($model) && $status == 'add'){
 
             $data = [];
@@ -125,7 +129,12 @@ class ArticleController extends Controller{
             $data['article_id'] = $request->article_id;
             UserStar::create($data);
             $status == 'add';
+
+            $to_user = Article::find($request->article_id);
+            \commonHelper::sendNotice($user->id, $to_user->user_id, $request->article_id, 'star');
+
         }
+
 
         return response()->json(([
             'status' => $status,
@@ -185,6 +194,9 @@ class ArticleController extends Controller{
 
             if ($article != null)
             {
+                $to_user = Article::find($request->article_id);
+                \commonHelper::sendNotice(Auth::user()->id, $to_user->user_id, $request->article_id, 'comment');
+
                 return redirect()->back()->withErrors(['suc'=>'评论成功']);
             }
 

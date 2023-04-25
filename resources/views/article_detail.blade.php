@@ -36,7 +36,7 @@
         </div>
 
         <div class="post-bottom">
-            <span class="post-num">点赞: 0&nbsp;</span>
+            <span class="post-num">点赞: {{ count($article->star) }}&nbsp;</span>
             <span class="post-num">评论: {{ count($article->comment) }}</span>
 
 {{--            <img class="post-tubiao share-tubiao" src="/common/pictures/1/share.png">--}}

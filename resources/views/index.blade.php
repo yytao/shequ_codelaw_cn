@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>首页 - {{ __('views.appName') }}</title>
+    <title>{{__('views.index_title')}} - {{ __('views.appName') }}</title>
     <link rel="stylesheet" type="text/css" href="/common/common.css" />
     <link rel="stylesheet" type="text/css" href="/common/css/top.css" />
     <link rel="stylesheet" type="text/css" href="/common/css/1.css" />
@@ -83,7 +83,7 @@
 
             <div class="post-bottom">
                 <span class="post-num">#{{ $item->category->category_name }}&nbsp;</span>
-                <span class="post-num" >点赞：{{$item->star}}&nbsp;</span>
+                <span class="post-num" >点赞：{{ count($item->star) }}&nbsp;</span>
                 <span class="post-num" >评论：{{ count($item->comment) }}</span>
                 @if(in_array($item->id, $userStar))
                     <img id="like-btn{{ $item->id }}" class="post-tubiao like-btn" data-status="del" data-id="{{ $item->id }}" src="/common/pictures/1/like2.png" />

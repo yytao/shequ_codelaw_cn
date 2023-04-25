@@ -1,38 +1,31 @@
 $(function(){
-    var pic1 = document.getElementById("pic1");
-    var pic2 = document.getElementById("pic2");
-    var pic3 = document.getElementById("pic3");
 
-    $('#text1').click(function(){
-        $('#text1').css('color','rgb(177, 176, 176)');
-        pic1.style.display = "none";
+    $('.notice-line').click(function(){
+
+        var data_id = $(this).attr('data-id')
+
+        $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+        $.post('/notice/single', {
+            data_id:data_id
+        }, function(res){
+            if(res.msg == 'success') {
+                $('#new-notice-'+data_id).hide()
+            }
+        });
     });
 
-    $('#text2').click(function(){
-        $('#text2').css('color','rgb(177, 176, 176)');
-        pic2.style.display = "none";
-    });
-    
-    $('#text3').click(function(){
-        $('#text3').css('color','rgb(177, 176, 176)');
-        pic3.style.display = "none";
-    });
+    $('#notice-button').click(function(){
 
-    $('#detail-button').click(function(){
-        $('#text1').css('color','rgb(177, 176, 176)');
-        $('#text2').css('color','rgb(177, 176, 176)');
-        $('#text3').css('color','rgb(177, 176, 176)');
-        pic1.style.display = "none";
-        pic2.style.display = "none";
-        pic3.style.display = "none";
+        $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+        $.post('/notice/clear', {
 
-        $('#detail-button').css('background-color','rgb(169,207,249)');
-        $(this).css('background-color','rgb(122,146,203)')
+        }, function(res){
+            if(res.msg == 'success') {
+                $('.message-right').hide()
+            }
+        });
     });
 
-    // $('.top-buttons').click(function(){
-    //     $('.top-buttons').css('background-color','rgb(169,207,249)');
-    //     $(this).css('background-color','rgb(122,146,203)')
-    // });
-     
+
+
 });
