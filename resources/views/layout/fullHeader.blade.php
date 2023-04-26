@@ -33,7 +33,7 @@
                 <div id="search-bar">
                     <div id="search-both">
                         <form action="/search" method="get" id="searchForm">
-                            <input id="search-input" placeholder="请输入关键词..." name="sword" value="{{ $sword??'' }}" />
+                            <input id="search-input" placeholder="{{ __('views.please_text_keyword') }}" name="sword" value="{{ $sword??'' }}" />
 
                             <a id="search-result" href="javascript:void(0)" onclick="$('#searchForm').submit()">
                                 <img id="search-img" src="/common/pictures/1/search.png" />

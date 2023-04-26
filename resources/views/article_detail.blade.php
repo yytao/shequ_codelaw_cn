@@ -1,5 +1,5 @@
 @extends('layout.titleHeader')
-@section('title', '详情')
+@section('title', __('views.article_detail'))
 @section('style')
     @parent
     <link rel="stylesheet" href="/common/css/2.css">
@@ -36,8 +36,8 @@
         </div>
 
         <div class="post-bottom">
-            <span class="post-num">点赞: {{ count($article->star) }}&nbsp;</span>
-            <span class="post-num">评论: {{ count($article->comment) }}</span>
+            <span class="post-num">{{ __('views.like') }}: {{ count($article->star) }}&nbsp;</span>
+            <span class="post-num">{{ __('views.comment') }}: {{ count($article->comment) }}</span>
 
 {{--            <img class="post-tubiao share-tubiao" src="/common/pictures/1/share.png">--}}
         </div>
@@ -46,7 +46,7 @@
     <!-- <div style="height: 200px; width: 300px; overflow: auto;"></div> -->
     <!-- 评论 -->
     <div class="alert">
-        <h2><strong>评论</strong></h2>
+        <h2><strong>{{ __('views.comment') }}</strong></h2>
         <hr class="line">
     </div>
     @foreach($article->comment as $k=>$item)
@@ -83,9 +83,9 @@
 
 <div id="navi" style="height: 10vw;">
     @if($user)
-        <input type="text" class="form-control comment-bottom-input" id="comment-bottom-input" placeholder="评论">
+        <input type="text" class="form-control comment-bottom-input" id="comment-bottom-input" placeholder="{{ __('views.comment') }}">
     @else
-        <input type="text" class="form-control comment-bottom-input" disabled placeholder="请先登录">
+        <input type="text" class="form-control comment-bottom-input" disabled placeholder="{{ __('views.please_login') }}">
     @endif
 
     @if(in_array($article->id, $userStar))
@@ -126,7 +126,7 @@
             $('#mask').css('display', 'block')
             $('#comment-form').css('display', 'block')
             $('#comment_textarea').focus()
-            $('#comment_textarea').attr('placeholder', '评论 {{ $article->user->name }}：')
+            $('#comment_textarea').attr('placeholder', '{{ __('views.comment').' '.$article->user->name }}：')
         })
     })
 

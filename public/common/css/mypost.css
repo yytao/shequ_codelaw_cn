@@ -1,33 +1,32 @@
 .post-content {
-  font-size: 3.8vw;
-  position: relative;
-  left: 7vw;
-  width: 80vw;
+    font-size: 3.8vw;
+    padding-top: 4vw;
+    padding-left: 4vw;
+    width: 80vw;
 }
 .content-in {
-  text-decoration: none;
-  color: black;
+    text-decoration: none;
+    color: black;
 }
 .post-picture {
-  width: 30vw;
-  display: block;
-  position: relative;
-  left: -1vw;
+    width: 30vw;
+    display: block;
+    position: relative;
+    left: -1vw;
 }
 .post-num {
-  font-size: 3vw;
-  color: #7f7f7f;
-  position: relative;
-  left: 65vw;
-  top: -2vh;
+    font-size: 3vw;
+    color: #7f7f7f;
+    width: 100%;
 }
 #divider {
-  position: relative;
-  top: -3vh;
+    position: relative;
+    top: -2vh;
 }
 .post-date {
-  height: 20px;
+    height: 20px;
+    text-align: right;
 }
 .post-bottom {
-  height: 20px;
+    height: 20px;
 }

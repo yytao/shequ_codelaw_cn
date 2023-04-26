@@ -18,9 +18,7 @@
 .post-content{
     font-size: 4.5vw;
     padding-top: 5vw;
-    padding-left: 14vw;
     width: 100%;
-
 }
 .content-in{
     display: block;
@@ -35,13 +33,11 @@
 .post-num{
     font-size: 3vw;
     color: #7F7F7F;
-    position: relative;
-    left: 14vw;
 }
 .post-tubiao{
     width: 6vw;
     position: relative;
-    left: 25vw;
+    left: 7vw;
 }
 
 .like-btn, .collect-btn{

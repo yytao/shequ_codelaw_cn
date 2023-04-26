@@ -14,7 +14,7 @@
 @section("body")
 
     <div id="search-result-num">
-        <p id="result-num">共找到 {{ count($result) }} 条结果</p>
+        <p id="result-num">{{ count($result) }} {{ __('views.search_result') }}</p>
         <hr>
 
         @foreach($result as $k=>$item)

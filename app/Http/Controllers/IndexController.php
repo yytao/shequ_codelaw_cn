@@ -38,7 +38,7 @@ class IndexController extends Controller{
             case 'CategoryRenting':
                 $query->where('category_id', 3);
                 break;
-            case 'CategorySocial':
+            case 'CategoryFriends':
                 $query->where('category_id', 4);
                 break;
         }
@@ -79,16 +79,6 @@ class IndexController extends Controller{
             'result'
         ));
     }
-
-
-
-
-
-
-
-
-
-
 
 
 

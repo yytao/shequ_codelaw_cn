@@ -33,7 +33,7 @@
             </a>
         </div>
         <div style="" class="detail-title">
-            <label id="detail-text">发帖</label>
+            <label id="detail-text">{{ __('views.post') }}</label>
         </div>
     </div>
 </div>
@@ -55,7 +55,7 @@
 
                                 <div class="col-md-6">
                                     <select id="articleCategory" name="articleCategory" class="form-control @error('articleCategory') is-invalid @enderror" required>
-                                        <option value="">请选择分类</option>
+                                        <option value="">{{ __('views.select_category') }}</option>
                                         @foreach($category as $k=>$item)
                                             <option value="{{ $item->id }}">{{ $item->category_name }}</option>
                                         @endforeach

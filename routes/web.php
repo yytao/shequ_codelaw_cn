@@ -23,7 +23,7 @@ Route::group(['middleware'=>['setLocale']], function(){
         Route::get('/share', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryShare');
         Route::get('/unused', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryUnused');
         Route::get('/renting', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryRenting');
-        Route::get('/social', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategorySocial');
+        Route::get('/friends', [\App\Http\Controllers\IndexController::class, 'index'])->name('CategoryFriends');
 
         //检索
         Route::get('/search', [App\Http\Controllers\IndexController::class, 'search'])->name('search');

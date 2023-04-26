@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>{{__('views.index_title')}} - {{ __('views.appName') }}</title>
+    <title>{{__('views.home')}} - {{ trans('views.appName') }}</title>
     <link rel="stylesheet" type="text/css" href="/common/common.css" />
     <link rel="stylesheet" type="text/css" href="/common/css/top.css" />
     <link rel="stylesheet" type="text/css" href="/common/css/1.css" />
@@ -31,7 +31,7 @@
         <div id="search-bar">
             <div id="search-both">
                 <form action="/search" method="get" id="searchForm">
-                    <input id="search-input" placeholder="请输入关键词..." name="sword" />
+                    <input id="search-input" placeholder="{{ __('views.please_text_keyword') }}" name="sword" />
 
                     <a id="search-result" href="javascript:void(0)" onclick="$('#searchForm').submit()">
                         <img id="search-img" src="/common/pictures/1/search.png" />
@@ -53,13 +53,13 @@
         <a href="/renting">
             <span class="tag @if($route=='CategoryRenting') tag_active @endif">{{ trans('views.renting') }}</span>
         </a>
-        <a href="/social">
-            <span class="tag @if($route=='CategorySocial') tag_active @endif">{{ trans('views.social') }}</span>
+        <a href="/friends">
+            <span class="tag @if($route=='CategoryFriends') tag_active @endif">{{ trans('views.friends') }}</span>
         </a>
 
-        <div style="display: inline; float: right;right:3px;">
-            <button id="newest" class="top-buttons">最新</button>
-            <button id="hotest" class="top-buttons">热门</button>
+        <div style="display: inline; float: right;margin-top: 2vw;">
+            <button id="newest" class="top-buttons">{{ __('views.newest') }}</button>
+            <button id="hotest" class="top-buttons">{{ __('views.popular') }}</button>
         </div>
     </div>
 </div>
@@ -82,9 +82,9 @@
             </a>
 
             <div class="post-bottom">
-                <span class="post-num">#{{ $item->category->category_name }}&nbsp;</span>
-                <span class="post-num" >点赞：{{ count($item->star) }}&nbsp;</span>
-                <span class="post-num" >评论：{{ count($item->comment) }}</span>
+                <span class="post-num">#{{ __("views.".$item->category->nick) }}&nbsp;</span>
+                <span class="post-num" >{{ __('views.like') }}：{{ count($item->star) }}&nbsp;</span>
+                <span class="post-num" >{{ __('views.comment') }}：{{ count($item->comment) }}</span>
                 @if(in_array($item->id, $userStar))
                     <img id="like-btn{{ $item->id }}" class="post-tubiao like-btn" data-status="del" data-id="{{ $item->id }}" src="/common/pictures/1/like2.png" />
                 @else

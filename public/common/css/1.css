@@ -8,10 +8,8 @@
 
 
 .tag{
-    width: 10vw;
+    margin-left: 2vw;
     display: inline-block;
-    position: relative;
-    left: 3vw;
     line-height: 10vw;
     font-size: 3.5vw;
     color: rgb(127,127,127);
@@ -30,10 +28,7 @@
     font-weight: bold;
     font-size: 3.5vw;
     color: white;
-    width: 12vw;
-    position: relative;
-    top:1vh;
-    right: 10vw;
+    width: 13vw;
     border: none;
     border-radius: 1.5vw;
     background: rgb(169,207,249);

@@ -1,5 +1,5 @@
 @extends('layout.userHeader')
-@section('title', '我的收藏')
+@section('title', __('views.my_collect'))
 @section('style')
     @parent
     <link rel="stylesheet" href="/common/css/navi.css">
@@ -25,7 +25,7 @@
                         </div>
                     </a>
                     <div class="post-date">
-                        <span class="post-num">{{ $item->created_at->format('Y年m月d日 H:i') }}</span>
+                        <span class="post-num">{{ $item->created_at->format('Y-m-d H:i') }}</span>
                         <span id="divider">
                             <hr />
                         </span>

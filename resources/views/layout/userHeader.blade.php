@@ -31,7 +31,7 @@
                     <div style="width: 35vw;height: 25vw;float: left">
                         <div id="name">{{ $user->name }}</div>
                         <div id="IDnum">ID：{{ $user->user_code }}</div>
-                        <div id="IPaddress">IP属地：北京</div>
+{{--                        <div id="IPaddress">IP属地：北京</div>--}}
                     </div>
                     <a href="/logout">
                         <img id="out" src="/common/pictures/5/out.png" />
@@ -46,7 +46,7 @@
                     @else
                         <img src="/common/pictures/5/mywords.png" class="ding-tubiao">
                     @endif
-                    <div @if($route=="user")style="color: rgb(122,146,203)"@endif>我的发帖</div>
+                    <div @if($route=="user")style="color: rgb(122,146,203)"@endif>{{ __('views.my_post') }}</div>
                     @if($route == 'user')
                         <img src="/common/pictures/5/mywords-highlight.png" class="ding-fenge">
                     @endif
@@ -59,7 +59,7 @@
                         <img src="/common/pictures/5/collect.png" class="ding-tubiao">
                     @endif
 
-                    <div @if($route=="user.collect")style="color: rgb(226,172,47);"@endif>我的收藏</div>
+                    <div @if($route=="user.collect")style="color: rgb(226,172,47);"@endif>{{ __('views.my_collect') }}</div>
                     @if($route == 'user.collect')
                         <img src="/common/pictures/5/collect-highlight.png" class="ding-fenge">
                     @endif
@@ -72,7 +72,7 @@
                         <img src="/common/pictures/5/password.png" class="ding-tubiao">
                     @endif
 
-                    <div @if($route=="user.edit")style="color: rgb(169,207,249);"@endif>信息设置</div>
+                    <div @if($route=="user.edit")style="color: rgb(169,207,249);"@endif>{{ __('views.my_setting') }}</div>
                     @if($route == 'user.edit')
                         <img src="/common/pictures/5/mywords-highlight.png" class="ding-fenge">
                     @endif

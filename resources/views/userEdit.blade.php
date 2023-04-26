@@ -1,5 +1,5 @@
 @extends('layout.userHeader')
-@section('title', '我的发帖')
+@section('title', __('views.my_setting'))
 
 @section('script')
     @parent
@@ -30,13 +30,13 @@
 
         <a href="javascript:void(0)" onclick="displayWindow1()">
             <div class="edit-line">
-                <span>&emsp;修改昵称</span>
+                <span>&emsp;{{ __('views.edit_name') }}</span>
             </div>
         </a>
         <hr />
         <a href="javascript:void(0)" onclick="displayWindow2()">
             <div class="edit-line">
-                <span>&emsp;修改密码</span>
+                <span>&emsp;{{ __('views.edit_pw') }}</span>
             </div>
         </a>
     </div>
@@ -46,15 +46,15 @@
     <div id="window-name">
         <div class="clear"></div>
         <span id="title-name">
-            <br>修改昵称
+            <br>{{ __('views.edit_name') }}
         </span>
         <hr />
         <form id="changeNameForm" method="post" action="{{ route('user.edit.name') }}">
             @csrf
-            <input type="text" id="new_name" name="new_name" maxlength="15" class="form-control" required placeholder="新的昵称" />
+            <input type="text" id="new_name" name="new_name" maxlength="15" class="form-control" required placeholder="{{ __('views.new_name') }}" />
             <a href="javascript:void(0)" onclick="hideWindow1()">
                 <div id="no-name">
-                    <span id="y-name" style="color: white;">取消</span>
+                    <span id="y-name" style="color: white;">{{ __('views.cancel') }}</span>
                 </div>
             </a>
             <div style="margin-top: 14vw;">
@@ -68,17 +68,17 @@
     <div id="window-password">
         <div class="clear"></div>
         <span id="title-password">
-            <br>修改密码
+            <br>{{ __('views.edit_pw') }}
         </span>
         <hr />
         <form id="changePwForm" method="post" action="{{ route('user.edit.password') }}">
             @csrf
-            <input id="old_password" name="old_password" minlength="8" maxlength="50" placeholder="原始密码" required type="password" />
-            <input id="new_password" name="new_password" minlength="8" maxlength="50" placeholder="修改密码" required type="password" />
-            <input id="confirm_password" name="confirm_password" minlength="8" maxlength="50" placeholder="确认密码" required type="password" />
+            <input id="old_password" name="old_password" minlength="8" maxlength="50" placeholder="{{ __('views.original_pw') }}" required type="password" />
+            <input id="new_password" name="new_password" minlength="8" maxlength="50" placeholder="{{ __('views.new_pw') }}" required type="password" />
+            <input id="confirm_password" name="confirm_password" minlength="8" maxlength="50" placeholder="{{ __('views.confirm_pw') }}" required type="password" />
             <a href="javascript:void(0)" onclick="hideWindow2()">
                 <div id="no-password">
-                    <span id="y-password" style="color: white;">取消</span>
+                    <span id="y-password" style="color: white;">{{ __('views.cancel') }}</span>
                 </div>
             </a>
             <div style="margin-top: 50vw;">

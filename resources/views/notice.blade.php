@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <title>{{ __('views.notice_title') }} - {{ __('views.appName') }}</title>
+        <title>{{ __('views.notice') }} - {{ __('views.appName') }}</title>
 
         <link rel="stylesheet" type="text/css" href="/common/css/4.css">
         <link rel="stylesheet" type="text/css" href="/common/css/navi.css">
@@ -25,11 +25,11 @@
         <div id="notice">
             <div style="width: 100%">
                 <div style="" class="notice-title">
-                    <label id="notice-text">{{ __('views.notice_title') }}</label>
+                    <label id="notice-text">{{ __('views.notice') }}</label>
                 </div>
 
                 <div style="" class="notice-button">
-                    <button id="notice-button">标为已读</button>
+                    <button id="notice-button">{{ __('views.label_all_read') }}</button>
                 </div>
 
             </div>
@@ -46,9 +46,9 @@
                         <th class="message-text">
                             <p>
                                 @if($item->type == 'star')
-                                    【点赞】
+                                    【{{ __('views.like') }}】
                                 @elseif($item->type == 'comment')
-                                    【评论】
+                                    【{{ __('views.comment') }}】
                                 @endif
                             </p>
                             <p>
@@ -56,10 +56,10 @@
                                     {{ $item->fromUser->name }}
                                 </span>
                                 @if($item->type == 'star')
-                                    点赞
+                                    【{{ __('views.like') }}】
                                 @elseif($item->type == 'comment')
-                                    评论
-                                @endif了您的发帖。
+                                    【{{ __('views.comment') }}】
+                                @endif {{ __('views.your_post') }}
                             </p>
                         </th>
                         @if($item->status == '0')
